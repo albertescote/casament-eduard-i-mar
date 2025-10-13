@@ -3,9 +3,9 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-export default async function Home({ params }: { params: { locale: Locale } }) {
-  const { locale } = await Promise.resolve(params);
-  const t = getDictionary(locale);
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = getDictionary((locale as Locale) ?? "en");
 
   return (
     <section className="space-y-10">
