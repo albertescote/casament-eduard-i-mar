@@ -9,10 +9,34 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
   const [attending, setAttending] = useState<string | null>(null);
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          email,
+          attending: attending === "yes" ? "yes" : "no",
+          notes: notes || undefined,
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Request failed");
+      }
+      setSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -26,6 +50,9 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4 max-w-lg rounded-xl border border-black/10 bg-white p-4">
+          {error ? (
+            <div className="rounded-md border border-red-200 bg-red-50 p-2 text-red-700 text-sm">{error}</div>
+          ) : null}
           <div>
             <label htmlFor="fullName" className="block text-sm font-medium">{t.rsvp.fullName}</label>
             <input
@@ -85,10 +112,10 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
           </div>
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600"
-            disabled={!fullName || !email || attending === null}
+            className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600 disabled:opacity-60"
+            disabled={submitting || !fullName || !email || attending === null}
           >
-            {t.rsvp.submit}
+            {submitting ? "Submitting..." : t.rsvp.submit}
           </button>
         </form>
       )}
