@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { locales, type Locale } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import { Nav } from "../_components/Nav";
 
 const geistSans = Geist({
@@ -37,12 +37,12 @@ export default async function LocaleLayout({
       <header className="w-full border-b border-black/10 sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
         <Nav />
       </header>
-      <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">{children}</main>
-      <footer className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-xs text-black/60">
+      <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
+        {children}
+      </main>
+      <footer className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-xs text-black/60 text-center">
         <p>© {new Date().getFullYear()} Eduard & Mar</p>
       </footer>
     </>
   );
 }
-
-

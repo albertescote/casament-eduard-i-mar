@@ -41,10 +41,12 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
 
   return (
     <section className="space-y-6">
-      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
         {t.rsvp.title}
       </h1>
-      <p className="text-base text-black/70 max-w-2xl">{t.rsvp.lead}</p>
+      <p className="text-base text-black/70 max-w-2xl mx-auto text-center">
+        {t.rsvp.lead}
+      </p>
 
       {submitted ? (
         <div className="rounded-xl border border-green-200 bg-green-50 p-4 text-green-900">
@@ -53,7 +55,7 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 max-w-lg rounded-xl border border-black/10 bg-white p-4"
+          className="space-y-4 max-w-lg mx-auto rounded-xl border border-black/10 bg-white p-4"
         >
           {error ? (
             <div className="rounded-md border border-red-200 bg-red-50 p-2 text-red-700 text-sm">
