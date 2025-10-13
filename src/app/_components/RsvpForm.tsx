@@ -32,8 +32,8 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
         throw new Error(data?.error || "Request failed");
       }
       setSubmitted(true);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
+    } catch (err) {
+      setError((err as Error).message || "Something went wrong");
     } finally {
       setSubmitting(false);
     }
@@ -41,7 +41,9 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
 
   return (
     <section className="space-y-6">
-      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t.rsvp.title}</h1>
+      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+        {t.rsvp.title}
+      </h1>
       <p className="text-base text-black/70 max-w-2xl">{t.rsvp.lead}</p>
 
       {submitted ? (
@@ -49,12 +51,19 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
           <p className="text-sm">{t.rsvp.success}</p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-lg rounded-xl border border-black/10 bg-white p-4">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4 max-w-lg rounded-xl border border-black/10 bg-white p-4"
+        >
           {error ? (
-            <div className="rounded-md border border-red-200 bg-red-50 p-2 text-red-700 text-sm">{error}</div>
+            <div className="rounded-md border border-red-200 bg-red-50 p-2 text-red-700 text-sm">
+              {error}
+            </div>
           ) : null}
           <div>
-            <label htmlFor="fullName" className="block text-sm font-medium">{t.rsvp.fullName}</label>
+            <label htmlFor="fullName" className="block text-sm font-medium">
+              {t.rsvp.fullName}
+            </label>
             <input
               id="fullName"
               type="text"
@@ -65,7 +74,9 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium">{t.rsvp.email}</label>
+            <label htmlFor="email" className="block text-sm font-medium">
+              {t.rsvp.email}
+            </label>
             <input
               id="email"
               type="email"
@@ -76,7 +87,9 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
             />
           </div>
           <div>
-            <span className="block text-sm font-medium">{t.rsvp.willAttend}</span>
+            <span className="block text-sm font-medium">
+              {t.rsvp.willAttend}
+            </span>
             <div className="mt-1 flex gap-4">
               <label className="inline-flex items-center gap-2 text-sm">
                 <input
@@ -101,7 +114,9 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
             </div>
           </div>
           <div>
-            <label htmlFor="notes" className="block text-sm font-medium">{t.rsvp.notes}</label>
+            <label htmlFor="notes" className="block text-sm font-medium">
+              {t.rsvp.notes}
+            </label>
             <textarea
               id="notes"
               value={notes}
@@ -122,5 +137,3 @@ export function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
     </section>
   );
 }
-
-

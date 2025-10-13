@@ -2,14 +2,14 @@ import { cookies } from "next/headers";
 
 const ADMIN_COOKIE = "admin_session";
 
-export function isAdminAuthenticated(): boolean {
-  const cookieStore = cookies();
+export async function isAdminAuthenticated(): Promise<boolean> {
+  const cookieStore = await cookies();
   const value = cookieStore.get(ADMIN_COOKIE)?.value;
   return value === "ok";
 }
 
-export function setAdminAuthenticated() {
-  const cookieStore = cookies();
+export async function setAdminAuthenticated() {
+  const cookieStore = await cookies();
   // Session cookie; secure in production
   cookieStore.set(ADMIN_COOKIE, "ok", {
     httpOnly: true,
@@ -18,5 +18,3 @@ export function setAdminAuthenticated() {
     path: "/",
   });
 }
-
-
