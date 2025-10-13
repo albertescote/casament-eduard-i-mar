@@ -31,19 +31,17 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
 }>) {
-  const { locale } = await params;
+  await params; // locale is used for routing but html/body are defined in root layout
   return (
-    <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white text-black`}>
-        <header className="w-full border-b border-black/10 sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-          <Nav />
-        </header>
-        <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">{children}</main>
-        <footer className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-xs text-black/60">
-          <p>© {new Date().getFullYear()} Eduard & Mar</p>
-        </footer>
-      </body>
-    </html>
+    <>
+      <header className="w-full border-b border-black/10 sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+        <Nav />
+      </header>
+      <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">{children}</main>
+      <footer className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-xs text-black/60">
+        <p>© {new Date().getFullYear()} Eduard & Mar</p>
+      </footer>
+    </>
   );
 }
 
