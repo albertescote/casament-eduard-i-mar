@@ -4,8 +4,13 @@ import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-export default function RsvpPage({ params }: { params: { locale: Locale } }) {
-  const t = getDictionary(params.locale);
+export default async function RsvpPageWrapper({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const t = getDictionary(locale);
+  return <RsvpForm t={t} />;
+}
+
+function RsvpForm({ t }: { t: ReturnType<typeof getDictionary> }) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [attending, setAttending] = useState<string | null>(null);

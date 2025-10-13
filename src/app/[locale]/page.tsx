@@ -3,8 +3,9 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-export default async function Home({ params }: { params: { locale: Locale } }) {
-  const t = getDictionary(params.locale);
+export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const t = getDictionary(locale);
 
   return (
     <section className="space-y-10">
@@ -15,10 +16,10 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">{t.home.heroTitle}</h1>
             <p className="text-base sm:text-lg text-black/70 max-w-xl">{t.home.heroLead}</p>
             <div className="flex gap-3 pt-2">
-              <Link href={`/${params.locale}/schedules`} className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600">
+              <Link href={`/${locale}/schedules`} className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600">
                 {t.home.ctaSchedule}
               </Link>
-              <Link href={`/${params.locale}/rsvp`} className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-medium hover:opacity-90">
+              <Link href={`/${locale}/rsvp`} className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-medium hover:opacity-90">
                 {t.home.ctaRsvp}
               </Link>
             </div>

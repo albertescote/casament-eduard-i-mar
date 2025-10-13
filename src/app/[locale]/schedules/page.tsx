@@ -2,8 +2,9 @@ import Image from "next/image";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-export default function SchedulesPage({ params }: { params: { locale: Locale } }) {
-  const t = getDictionary(params.locale);
+export default async function SchedulesPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const t = getDictionary(locale);
   const items = t.schedules.items;
 
   return (
