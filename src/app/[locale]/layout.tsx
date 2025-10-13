@@ -29,9 +29,9 @@ export default async function LocaleLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }>) {
-  await params; // locale is used for routing but html/body are defined in root layout
+  const { locale } = await Promise.resolve(params);
   return (
     <>
       <header className="w-full border-b border-black/10 sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
