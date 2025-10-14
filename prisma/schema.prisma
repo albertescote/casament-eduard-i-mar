@@ -8,14 +8,16 @@ datasource db {
 }
 
 model Rsvp {
-  id         String   @id @default(cuid())
-  createdAt  DateTime @default(now())
-  fullName   String
-  email      String
-  attending  Boolean
-  notes      String?  @db.Text
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
 
-  @@index([email])
+  fullName  String
+  attending Boolean
+  bus       Boolean
+
+  vegetarian Boolean @default(false)
+  vegan      Boolean @default(false)
+  celiac     Boolean @default(false)
+
+  allergies String? @db.Text
 }
-
-

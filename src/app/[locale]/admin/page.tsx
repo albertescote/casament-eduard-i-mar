@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Rsvp = {
   id: string;
   createdAt: string;
   fullName: string;
-  email: string;
   attending: boolean;
-  notes: string | null;
+  bus: boolean;
+  vegetarian: boolean;
+  vegan: boolean;
+  celiac: boolean;
+  allergies: string | null;
 };
 
 export default function AdminPage({
@@ -46,7 +49,7 @@ export default function AdminPage({
     const res = await fetch("/api/admin/rsvps");
     if (!res.ok) throw new Error("Unauthorized");
     const data = await res.json();
-    setRsvps(data.data);
+    setRsvps(data.data as Rsvp[]);
   }
 
   function exportCsv() {
@@ -54,17 +57,23 @@ export default function AdminPage({
       "id",
       "createdAt",
       "fullName",
-      "email",
       "attending",
-      "notes",
+      "bus",
+      "vegetarian",
+      "vegan",
+      "celiac",
+      "allergies",
     ];
     const rows = rsvps.map((r) => [
       r.id,
       r.createdAt,
       r.fullName,
-      r.email,
       r.attending ? "yes" : "no",
-      r.notes ?? "",
+      r.bus ? "yes" : "no",
+      r.vegetarian ? "yes" : "no",
+      r.vegan ? "yes" : "no",
+      r.celiac ? "yes" : "no",
+      r.allergies ?? "",
     ]);
     const csv = [headers, ...rows]
       .map((line) =>
@@ -81,11 +90,18 @@ export default function AdminPage({
   }
 
   useEffect(() => {
-    // Try to fetch; if cookie exists, it will succeed
+    // Si ja tens cookie de sessió vàlida, es carregarà directament
     fetchRsvps()
       .then(() => setSession("ok"))
       .catch(() => setSession("no"));
   }, []);
+
+  const totals = useMemo(() => {
+    const attendingYes = rsvps.filter((r) => r.attending).length;
+    const attendingNo = rsvps.length - attendingYes;
+    const busYes = rsvps.filter((r) => r.bus).length;
+    return { attendingYes, attendingNo, busYes, total: rsvps.length };
+  }, [rsvps]);
 
   if (session !== "ok") {
     return (
@@ -115,8 +131,17 @@ export default function AdminPage({
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold tracking-tight">RSVPs</h1>
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">RSVPs</h1>
+          <p className="text-xs text-black/60 mt-1">
+            Total: <span className="font-medium">{totals.total}</span> ·
+            Assisteixen:{" "}
+            <span className="font-medium">{totals.attendingYes}</span> · No
+            venen: <span className="font-medium">{totals.attendingNo}</span> ·
+            Bus: <span className="font-medium">{totals.busYes}</span>
+          </p>
+        </div>
         <button
           onClick={exportCsv}
           className="rounded-md bg-pink-500 text-white px-3 py-2 text-sm font-medium hover:bg-pink-600"
@@ -124,29 +149,67 @@ export default function AdminPage({
           Export CSV
         </button>
       </div>
+
       <div className="overflow-x-auto rounded-lg border border-black/10">
         <table className="min-w-full text-sm">
           <thead className="bg-black/5 text-left">
             <tr>
               <th className="p-2">Created</th>
               <th className="p-2">Full name</th>
-              <th className="p-2">Email</th>
               <th className="p-2">Attending</th>
-              <th className="p-2">Notes</th>
+              <th className="p-2">Bus</th>
+              <th className="p-2">Dietary</th>
+              <th className="p-2">Allergies</th>
             </tr>
           </thead>
           <tbody>
             {rsvps.map((r) => (
-              <tr key={r.id} className="border-t border-black/10">
+              <tr key={r.id} className="border-t border-black/10 align-top">
                 <td className="p-2 whitespace-nowrap">
                   {new Date(r.createdAt).toLocaleString()}
                 </td>
                 <td className="p-2 whitespace-nowrap">{r.fullName}</td>
-                <td className="p-2 whitespace-nowrap">{r.email}</td>
                 <td className="p-2 whitespace-nowrap">
-                  {r.attending ? "Yes" : "No"}
+                  {r.attending ? (
+                    <span className="inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-green-800">
+                      Yes
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center rounded-full bg-red-100 px-2 py-0.5 text-red-800">
+                      No
+                    </span>
+                  )}
                 </td>
-                <td className="p-2">{r.notes}</td>
+                <td className="p-2 whitespace-nowrap">
+                  {r.bus ? "Yes" : "No"}
+                </td>
+                <td className="p-2">
+                  <div className="flex flex-wrap gap-1">
+                    {r.vegetarian && (
+                      <span className="rounded-full bg-black/10 px-2 py-0.5">
+                        Vegetarian
+                      </span>
+                    )}
+                    {r.vegan && (
+                      <span className="rounded-full bg-black/10 px-2 py-0.5">
+                        Vegan
+                      </span>
+                    )}
+                    {r.celiac && (
+                      <span className="rounded-full bg-black/10 px-2 py-0.5">
+                        Celiac
+                      </span>
+                    )}
+                    {!r.vegetarian && !r.vegan && !r.celiac && (
+                      <span className="text-black/50">—</span>
+                    )}
+                  </div>
+                </td>
+                <td className="p-2 min-w-[240px]">
+                  {r.allergies?.trim() || (
+                    <span className="text-black/40">—</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

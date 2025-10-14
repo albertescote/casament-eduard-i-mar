@@ -10,7 +10,6 @@ export async function isAdminAuthenticated(): Promise<boolean> {
 
 export async function setAdminAuthenticated() {
   const cookieStore = await cookies();
-  // Session cookie; secure in production
   cookieStore.set(ADMIN_COOKIE, "ok", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
