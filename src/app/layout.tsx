@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Eduard & Mar · Wedding",
-  description: "All details, schedule, and RSVP for the wedding of Eduard & Mar.",
+  description:
+    "All details, schedule, and RSVP for the wedding of Eduard & Mar.",
 };
 
 export default function RootLayout({
@@ -23,8 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white text-black`}>{children}</body>
+    <html lang="ca" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white text-black`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

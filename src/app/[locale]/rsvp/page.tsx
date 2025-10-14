@@ -8,7 +8,7 @@ export default async function RsvpPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getDictionary((locale as Locale) ?? "en");
+  const t = getDictionary((locale as Locale) ?? "ca");
 
   return (
     <section className="min-h-[80dvh] grid place-items-center py-8">

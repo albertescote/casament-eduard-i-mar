@@ -15,7 +15,8 @@ export const es = {
     infoTitle: "Información general",
     infoText: "Lugar, fecha, transporte y alojamiento.",
     scheduleTitle: "Horario del día",
-    scheduleText: "Horarios de la ceremonia, el aperitivo, la cena y la fiesta.",
+    scheduleText:
+      "Horarios de la ceremonia, el aperitivo, la cena y la fiesta.",
   },
   schedules: {
     title: "Horarios",
@@ -39,6 +40,10 @@ export const es = {
     submit: "Enviar confirmación",
     success: "¡Gracias! Hemos registrado tu respuesta 🎉",
   },
+  enter: {
+    enterPassword: "Introduce la contraseña",
+    passwordPlaceholder: "Contraseña",
+    submit: "Confirmar",
+    invalidPassword: "Contraseña incorrecta",
+  },
 } as const;
-
-

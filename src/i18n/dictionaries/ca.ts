@@ -39,6 +39,10 @@ export const ca = {
     submit: "Enviar confirmació",
     success: "Gràcies! Hem registrat la teva resposta 🎉",
   },
+  enter: {
+    enterPassword: "Introdueix la contrasenya",
+    passwordPlaceholder: "Contrasenya",
+    submit: "Confirmar",
+    invalidPassword: "Contrasenya incorrecta",
+  },
 } as const;
-
-

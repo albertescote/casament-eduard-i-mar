@@ -2,14 +2,13 @@ import Image from "next/image";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-// Two-page background: invitation-1.png and invitation-2.png stacked vertically
 export default async function SchedulesPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getDictionary((locale as Locale) ?? "en");
+  const t = getDictionary((locale as Locale) ?? "ca");
 
   return (
     <section className="relative min-h-[100vh]">

@@ -9,7 +9,7 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getDictionary((locale as Locale) ?? "en");
+  const t = getDictionary((locale as Locale) ?? "ca");
 
   return (
     <section className="space-y-10">

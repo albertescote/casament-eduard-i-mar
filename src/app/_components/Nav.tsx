@@ -14,7 +14,7 @@ function getCurrentLocale(pathname: string): Locale | null {
 
 export function Nav() {
   const pathname = usePathname();
-  const locale = getCurrentLocale(pathname ?? "/") ?? "en";
+  const locale = getCurrentLocale(pathname ?? "/") ?? "ca";
   const t = getDictionary(locale);
   const links = [
     { href: `/${locale}`, label: t.nav.home },
@@ -54,5 +54,3 @@ export function Nav() {
     </nav>
   );
 }
-
-
