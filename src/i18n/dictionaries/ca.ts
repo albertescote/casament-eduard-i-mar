@@ -19,14 +19,27 @@ export const ca = {
     scheduleText: "Horaris de la cerimònia, l'aperitiu, el sopar i la festa.",
   },
   wedding: {
-    title: "Horaris",
-    intro: "Aquí trobaràs l'horari detallat del dia del casament.",
-    items: [
-      { title: "Cerimònia", time: "17:00 · Església de Sant Pere" },
-      { title: "Aperitiu", time: "18:30 · Terrassa del jardí" },
-      { title: "Sopar", time: "20:30 · Sala principal" },
-      { title: "Festa", time: "23:30 · Pista de ball" },
-    ],
+    scheduleTitle: "Horari del Dia",
+    venueTitle: "El Lloc",
+    transportTitle: "Com Arribar",
+    transportBusTitle: "Autobús Llançadora",
+    transportBusDescription:
+      "Oferim un servei d'autobús d'anada i tornada entre el centre de la ciutat i el lloc de la celebració. Les places són limitades, si us plau, indica a la confirmació d'assistència si faràs ús de l'autobús.",
+    transportBusDeparture: "Sortida",
+    transportBusReturn: "Tornada",
+    transportBusLocation: "Estació d'autobusos de Valls",
+    transportBusConfirm:
+      "Confirma la teva plaça al formulari de confirmació d'assistència.",
+    transportParkingTitle: "Aparcament Privat",
+    transportParkingDescription:
+      "Hi ha aparcament gratuït disponible al recinte. Si us plau, arriba 15 minuts abans per tenir temps d'aparcar i caminar fins a la zona de cerimònia.",
+    parkingFeature1: "Zona d'aparcament al costat de l'entrada principal.",
+    parkingFeature2: "Es permet aparcar durant tota la nit.",
+    parkingFeature3: "Seguiu les indicacions del personal en arribar.",
+    addressLabel: "Adreça",
+    openInMaps: "Obrir a Google Maps",
+    venueDescription:
+      "Una masia catalana envoltada de natura i amb vistes espectaculars. L'espai perfecte per celebrar el nostre enllaç.",
   },
   rsvp: {
     title: "Confirmació d’assistència",
@@ -58,5 +71,58 @@ export const ca = {
   footer: {
     text: "Fet amb amor per al nostre gran dia: vine a celebrar-ho amb nosaltres i mantén-te al corrent",
     followJourney: "Segueix-nos en el nostre viatge junts",
+  },
+  faqs: {
+    title: "Preguntes Freqüents",
+    iban: {
+      title: "Detalls Bancaris",
+      description: "Si voleu fer una contribució, podeu usar aquest IBAN:",
+      thanks: "Gràcies per pensar en nosaltres",
+      copy: "Copiar",
+      copied: "Copiat",
+    },
+    instagram: {
+      title: "Instagram",
+      description:
+        "Compartiu moments i etiqueteu-nos. Ens fa molta il·lusió veure les vostres fotos!",
+      hashtag: "Hashtag suggerit:",
+    },
+    hotels: {
+      title: "Hotels Recomanats",
+      hotel1: {
+        name: "Hotel Masia Vallès",
+        notes: "A 3 km de la masia · €€€",
+      },
+      hotel2: {
+        name: "B&B Can Carles",
+        notes: "A 5 km, entorn rural · €€",
+      },
+      hotel3: {
+        name: "Apartaments Roca",
+        notes: "Centre del poble · €€",
+      },
+      hotel4: {
+        name: "Hotel Els Jardins",
+        notes: "A 7 km, amb spa · €€€€",
+      },
+    },
+    gallery: {
+      title: "Galeria de Fotos",
+      description:
+        "Compartirem un enllaç amb les fotos pocs dies després del casament.",
+      note: "Rebreu l'enllaç per correu o per missatge.",
+    },
+    dresscode: {
+      title: "Codi de Vestimenta",
+      description:
+        "L'estil del nostre casament és elegant i semiformal. Recomanem vestits llargs o vestits de còctel per a les dones i vestit amb americana o vestit complet per als homes.",
+      note: "Si us plau, eviteu el color blanc per respectar la núvia.",
+    },
+    gifts: {
+      title: "Llista de Casament",
+      description:
+        "El millor regal és la vostra presència. Si voleu fer un regal, preferim una contribució al nostre viatge de noces.",
+      note: "També podeu utilitzar els detalls bancaris a la secció IBAN.",
+    },
   },
 } as const;

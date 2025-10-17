@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const t = getDictionary((locale as Locale) ?? "ca");
   return (
     <>
-      <header className="w-full border-b border-black/10 sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <header className="w-full border-b border-black/10 sticky top-0 z-50 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
         <Nav />
       </header>
 

@@ -20,14 +20,27 @@ export const es = {
       "Horarios de la ceremonia, el aperitivo, la cena y la fiesta.",
   },
   wedding: {
-    title: "Horarios",
-    intro: "Aquí encontrarás el horario detallado del día de la boda.",
-    items: [
-      { title: "Ceremonia", time: "17:00 · Iglesia de Sant Pere" },
-      { title: "Aperitivo", time: "18:30 · Terraza del jardín" },
-      { title: "Cena", time: "20:30 · Salón principal" },
-      { title: "Fiesta", time: "23:30 · Pista de baile" },
-    ],
+    scheduleTitle: "Horario del Día",
+    venueTitle: "El Lugar",
+    transportTitle: "Cómo Llegar",
+    transportBusTitle: "Autobús Lanzadera",
+    transportBusDescription:
+      "Ofrecemos un servicio de autobús de ida y vuelta entre el centro de la ciudad y el lugar de la celebración. Las plazas son limitadas, por favor, indica en la confirmación de asistencia si harás uso del autobús.",
+    transportBusDeparture: "Salida",
+    transportBusReturn: "Vuelta",
+    transportBusLocation: "Estación de autobuses de Valls",
+    transportBusConfirm:
+      "Confirma tu plaza en el formulario de confirmación de asistencia.",
+    transportParkingTitle: "Aparcamiento Privado",
+    transportParkingDescription:
+      "Hay aparcamiento gratuito disponible en el recinto. Por favor, llega 15 minutos antes para tener tiempo de aparcar y caminar hasta la zona de ceremonia.",
+    parkingFeature1: "Zona de aparcamiento junto a la entrada principal.",
+    parkingFeature2: "Se permite aparcar durante toda la noche.",
+    parkingFeature3: "Seguid las indicaciones del personal al llegar.",
+    addressLabel: "Dirección",
+    openInMaps: "Abrir en Google Maps",
+    venueDescription:
+      "Una masía catalana rodeada de naturaleza y con vistas espectaculares. El espacio perfecto para celebrar nuestro enlace.",
   },
   rsvp: {
     title: "Confirmación de asistencia",
@@ -60,5 +73,57 @@ export const es = {
     text: "Hecho con amor para nuestro gran día: ven a celebrarlo con nosotros y mantente al día.",
     followJourney: "Síguenos en nuestro viaje juntos",
   },
-  info: {},
+  faqs: {
+    title: "Preguntas Frecuentes",
+    iban: {
+      title: "Detalles Bancarios",
+      description: "Si queréis hacer una contribución, podéis usar este IBAN:",
+      thanks: "Gracias por pensar en nosotros",
+      copy: "Copiar",
+      copied: "Copiado",
+    },
+    instagram: {
+      title: "Instagram",
+      description:
+        "Compartid momentos y etiquetadnos. ¡Nos hace mucha ilusión ver vuestras fotos!",
+      hashtag: "Hashtag sugerido:",
+    },
+    hotels: {
+      title: "Hoteles Recomendados",
+      hotel1: {
+        name: "Hotel Masía Vallès",
+        notes: "A 3 km de la masía · €€€",
+      },
+      hotel2: {
+        name: "B&B Can Carles",
+        notes: "A 5 km, entorno rural · €€",
+      },
+      hotel3: {
+        name: "Apartamentos Roca",
+        notes: "Centro del pueblo · €€",
+      },
+      hotel4: {
+        name: "Hotel Els Jardins",
+        notes: "A 7 km, con spa · €€€€",
+      },
+    },
+    gallery: {
+      title: "Galería de Fotos",
+      description:
+        "Compartiremos un enlace con las fotos pocos días después de la boda.",
+      note: "Recibiréis el enlace por correo o por mensaje.",
+    },
+    dresscode: {
+      title: "Código de Vestimenta",
+      description:
+        "El estilo de nuestra boda es elegante y semiformal. Recomendamos vestidos largos o vestidos de cóctel para las mujeres y traje con americana o traje completo para los hombres.",
+      note: "Por favor, evitad el color blanco para respetar a la novia.",
+    },
+    gifts: {
+      title: "Lista de Boda",
+      description:
+        "El mejor regalo es vuestra presencia. Si queréis hacer un regalo, preferimos una contribución a nuestro viaje de novios.",
+      note: "También podéis utilizar los detalles bancarios en la sección IBAN.",
+    },
+  },
 } as const;
