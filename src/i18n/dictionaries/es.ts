@@ -1,8 +1,9 @@
 export const es = {
   nav: {
     home: "Inicio",
-    schedules: "Horarios",
+    wedding: "La boda",
     rsvp: "Confirmar asistencia",
+    info: "Información de interés",
     brand: "Eduard & Mar",
   },
   home: {
@@ -18,7 +19,7 @@ export const es = {
     scheduleText:
       "Horarios de la ceremonia, el aperitivo, la cena y la fiesta.",
   },
-  schedules: {
+  wedding: {
     title: "Horarios",
     intro: "Aquí encontrarás el horario detallado del día de la boda.",
     items: [
@@ -59,4 +60,5 @@ export const es = {
     text: "Hecho con amor para nuestro gran día: ven a celebrarlo con nosotros y mantente al día.",
     followJourney: "Síguenos en nuestro viaje juntos",
   },
+  info: {},
 } as const;

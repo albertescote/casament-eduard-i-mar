@@ -18,8 +18,9 @@ export function Nav() {
   const t = getDictionary(locale);
   const links = [
     { href: `/${locale}`, label: t.nav.home },
-    { href: `/${locale}/schedules`, label: t.nav.schedules },
+    { href: `/${locale}/wedding`, label: t.nav.wedding },
     { href: `/${locale}/rsvp`, label: t.nav.rsvp },
+    { href: `/${locale}/info`, label: t.nav.info },
   ];
 
   return (

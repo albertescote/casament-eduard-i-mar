@@ -25,7 +25,7 @@ export default async function Home({
             </p>
             <div className="flex gap-3 pt-2">
               <Link
-                href={`/${locale}/schedules`}
+                href={`/${locale}/wedding`}
                 className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600"
               >
                 {t.home.ctaSchedule}

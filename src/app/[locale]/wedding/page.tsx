@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 
-export default async function SchedulesPage({
+export default async function WeddingPage({
   params,
 }: {
   params: Promise<{ locale: string }>;

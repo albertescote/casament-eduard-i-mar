@@ -1,8 +1,9 @@
 export const ca = {
   nav: {
     home: "Inici",
-    schedules: "Horaris",
+    wedding: "El casament",
     rsvp: "Confirmar assistència",
+    info: "Informació d'interès",
     brand: "Eduard & Mar",
   },
   home: {
@@ -17,7 +18,7 @@ export const ca = {
     scheduleTitle: "Horari del dia",
     scheduleText: "Horaris de la cerimònia, l'aperitiu, el sopar i la festa.",
   },
-  schedules: {
+  wedding: {
     title: "Horaris",
     intro: "Aquí trobaràs l'horari detallat del dia del casament.",
     items: [
