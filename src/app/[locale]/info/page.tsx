@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getDictionary } from "@/i18n/getDictionary";
 import { Locale } from "@/i18n/config";
+import type { ca } from "@/i18n/dictionaries/ca";
+import type { es } from "@/i18n/dictionaries/es";
 import { CopyButton } from "@/app/_components/copyButton";
 import { AccordionItem } from "@/app/_components/accordionItem";
 import { Hotel } from "@/app/_components/hotel";
@@ -35,7 +37,7 @@ export default function Faqs({
   params: Promise<{ locale: string }>;
 }) {
   const [locale, setLocale] = useState<string>("ca");
-  const [t, setT] = useState<any>(null);
+  const [t, setT] = useState<typeof ca | typeof es | null>(null);
 
   useEffect(() => {
     params.then(({ locale: l }) => {

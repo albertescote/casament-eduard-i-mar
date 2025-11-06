@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+import type { ca } from "@/i18n/dictionaries/ca";
+import type { es } from "@/i18n/dictionaries/es";
 
 const VENUE = {
   name: "Castell Tallat",
@@ -43,7 +45,7 @@ export default function WeddingPage({
   params: Promise<{ locale: string }>;
 }) {
   const [locale, setLocale] = useState<string>("ca");
-  const [t, setT] = useState<any>(null);
+  const [t, setT] = useState<typeof ca | typeof es | null>(null);
 
   useEffect(() => {
     params.then(({ locale: l }) => {

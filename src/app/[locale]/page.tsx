@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
+import type { ca } from "@/i18n/dictionaries/ca";
+import type { es } from "@/i18n/dictionaries/es";
 
 // Animation variants
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: {
     opacity: 1,
@@ -17,7 +19,7 @@ const fadeInUp = {
   }
 };
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -25,7 +27,7 @@ const fadeIn = {
   }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -36,7 +38,7 @@ const staggerContainer = {
   }
 };
 
-const scaleIn = {
+const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -51,7 +53,7 @@ export default function Home({
   params: Promise<{ locale: string }>;
 }) {
   const [locale, setLocale] = useState<string>("ca");
-  const [t, setT] = useState<any>(null);
+  const [t, setT] = useState<typeof ca | typeof es | null>(null);
 
   useEffect(() => {
     params.then(({ locale: l }) => {
