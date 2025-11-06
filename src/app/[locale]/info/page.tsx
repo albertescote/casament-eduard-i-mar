@@ -1,17 +1,52 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { getDictionary } from "@/i18n/getDictionary";
 import { Locale } from "@/i18n/config";
 import { CopyButton } from "@/app/_components/copyButton";
 import { AccordionItem } from "@/app/_components/accordionItem";
 import { Hotel } from "@/app/_components/hotel";
 
-export default async function Faqs({
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+export default function Faqs({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  const t = getDictionary((locale as Locale) ?? "ca");
+  const [locale, setLocale] = useState<string>("ca");
+  const [t, setT] = useState<any>(null);
+
+  useEffect(() => {
+    params.then(({ locale: l }) => {
+      setLocale(l);
+      setT(getDictionary((l as Locale) ?? "ca"));
+    });
+  }, [params]);
+
+  if (!t) {
+    return null;
+  }
 
   const faqs = [
     {
@@ -34,18 +69,18 @@ export default async function Faqs({
       ),
       content: (
         <div className="space-y-4">
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {t.faqs.iban.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-            <code className="select-all text-xs font-mono tracking-wide bg-stone-100 px-4 py-3 rounded-xl border border-stone-200 shadow-sm">
+            <code className="select-all text-xs font-mono tracking-wide bg-teal-50 px-4 py-3 rounded-xl border-2 border-teal-200 shadow-sm">
               ES00 0000 0000 0000 0000 0000
             </code>
             <CopyButton text="ES00 0000 0000 0000 0000 0000" locale={locale} />
           </div>
-          <div className="flex items-center gap-2 p-3 bg-rose-50 rounded-xl border border-rose-200">
+          <div className="flex items-center gap-2 p-3 bg-blue-50 rounded-xl border border-blue-200">
             <svg
-              className="w-5 h-5 text-rose-600 flex-shrink-0"
+              className="w-5 h-5 text-blue-600 flex-shrink-0"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -73,7 +108,7 @@ export default async function Faqs({
       ),
       content: (
         <div className="space-y-4">
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {t.faqs.instagram.description}
           </p>
           <div className="flex flex-col gap-3">
@@ -81,11 +116,11 @@ export default async function Faqs({
               href="https://instagram.com/maria.ijoan2025"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl border border-pink-200 hover:border-pink-300 transition-colors group"
+              className="inline-flex items-center gap-3 p-4 bg-gradient-to-r from-teal-50 to-sky-50 rounded-xl border-2 border-teal-200 hover:border-teal-300 transition-all hover:shadow-md group"
             >
               <div className="p-2 bg-white rounded-lg shadow-sm">
                 <svg
-                  className="w-5 h-5 text-pink-600"
+                  className="w-5 h-5 text-teal-600"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -93,11 +128,11 @@ export default async function Faqs({
                   <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4ZM17.8 6.2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
                 </svg>
               </div>
-              <span className="font-semibold text-stone-800 group-hover:text-pink-600 transition-colors">
+              <span className="font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
                 @maria.ijoan2025
               </span>
               <svg
-                className="w-4 h-4 text-stone-400 ml-auto"
+                className="w-4 h-4 text-gray-400 ml-auto"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -110,9 +145,9 @@ export default async function Faqs({
                 />
               </svg>
             </Link>
-            <div className="flex items-center gap-2 text-sm text-stone-600">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>{t.faqs.instagram.hashtag}</span>
-              <code className="font-mono text-pink-600 bg-pink-50 px-2 py-1 rounded">
+              <code className="font-mono text-teal-600 bg-teal-50 px-2 py-1 rounded border border-teal-200">
                 #MariaiJoan2025
               </code>
             </div>
@@ -183,7 +218,7 @@ export default async function Faqs({
       ),
       content: (
         <div className="space-y-3">
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {t.faqs.gallery.description}
           </p>
           <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
@@ -225,12 +260,12 @@ export default async function Faqs({
       ),
       content: (
         <div className="space-y-3">
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {t.faqs.dresscode.description}
           </p>
-          <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-xl border border-purple-200">
+          <div className="flex items-start gap-3 p-4 bg-sky-50 rounded-xl border border-sky-200">
             <svg
-              className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5"
+              className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -242,7 +277,7 @@ export default async function Faqs({
                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
               />
             </svg>
-            <p className="text-sm text-purple-900">{t.faqs.dresscode.note}</p>
+            <p className="text-sm text-sky-900">{t.faqs.dresscode.note}</p>
           </div>
         </div>
       ),
@@ -267,7 +302,7 @@ export default async function Faqs({
       ),
       content: (
         <div className="space-y-3">
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {t.faqs.gifts.description}
           </p>
           <div className="flex items-start gap-3 p-4 bg-amber-50 rounded-xl border border-amber-200">
@@ -292,16 +327,79 @@ export default async function Faqs({
   ];
 
   return (
-    <section className="min-h-screen bg-white py-16">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-stone-800 mb-3">
+    <section className="relative min-h-screen bg-white py-16">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            y: [0, -35, 0],
+            x: [0, 25, 0],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-32 left-0 w-80 h-80 bg-teal-200/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [0, 35, 0],
+            x: [0, -25, 0],
+          }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute bottom-32 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute top-1/3 right-1/4 w-72 h-72 bg-sky-200/15 rounded-full blur-3xl"
+        />
+      </div>
+
+      {/* Content */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
+      >
+        <motion.div variants={fadeInUp} className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg mb-4">
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-3">
             {t.faqs.title}
           </h1>
-          <div className="w-24 h-1 bg-rose-400 mx-auto rounded-full"></div>
-        </div>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-400 mx-auto rounded-full shadow-sm"></div>
+        </motion.div>
 
-        <div className="grid gap-4">
+        <motion.div variants={fadeInUp} className="grid gap-4">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={faq.id}
@@ -312,8 +410,8 @@ export default async function Faqs({
               {faq.content}
             </AccordionItem>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

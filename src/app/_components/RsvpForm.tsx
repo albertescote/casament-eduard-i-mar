@@ -1,9 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { getDictionary } from "@/i18n/getDictionary";
 
 type Dict = ReturnType<typeof getDictionary>;
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
 
 export function RsvpForm({ t }: { t: Dict }) {
   const [fullName, setFullName] = useState("");
@@ -54,174 +75,394 @@ export function RsvpForm({ t }: { t: Dict }) {
     submitting || !fullName || attending === null || bus === null;
 
   return (
-    <section className="space-y-6">
-      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
-        {t.rsvp.title}
-      </h1>
-      <p className="text-base text-black/70 max-w-2xl mx-auto text-center">
-        {t.rsvp.lead}
-      </p>
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="space-y-6"
+    >
+      <motion.div variants={fadeInUp} className="text-center space-y-3">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+          {t.rsvp.title}
+        </h1>
+        <p className="text-base text-gray-600 max-w-2xl mx-auto">
+          {t.rsvp.lead}
+        </p>
+      </motion.div>
 
-      {submitted ? (
-        <div className="rounded-xl border border-green-200 bg-green-50 p-4 text-green-900">
-          <p className="text-sm">{t.rsvp.success}</p>
-        </div>
-      ) : (
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-5 max-w-lg mx-auto rounded-2xl border border-black/10 bg-white p-5 shadow-sm"
-        >
-          {error ? (
-            <div className="rounded-md border border-red-200 bg-red-50 p-2 text-red-700 text-sm">
-              {error}
-            </div>
-          ) : null}
-
-          <div>
-            <label htmlFor="fullName" className="block text-sm font-medium">
-              {t.rsvp.fullName}
-            </label>
-            <input
-              id="fullName"
-              type="text"
-              required
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              placeholder={t.rsvp.fullNamePlaceholder ?? ""}
-              className="mt-1 w-full rounded-lg border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-pink-300"
-            />
-          </div>
-
-          <fieldset className="space-y-2">
-            <legend className="text-sm font-medium">{t.rsvp.willAttend}</legend>
-            <div className="mt-1 grid grid-cols-2 gap-3">
-              <label
-                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm cursor-pointer transition
-                ${attending === "yes" ? "border-pink-300 bg-pink-50" : "border-black/15 hover:bg-black/5"}`}
-              >
-                <input
-                  type="radio"
-                  name="attending"
-                  value="yes"
-                  checked={attending === "yes"}
-                  onChange={() => setAttending("yes")}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.yes}
-              </label>
-              <label
-                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm cursor-pointer transition
-                ${attending === "no" ? "border-pink-300 bg-pink-50" : "border-black/15 hover:bg-black/5"}`}
-              >
-                <input
-                  type="radio"
-                  name="attending"
-                  value="no"
-                  checked={attending === "no"}
-                  onChange={() => setAttending("no")}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.no}
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset className="space-y-2">
-            <legend className="text-sm font-medium">
-              {t.rsvp.busQuestion}
-            </legend>
-            <div className="mt-1 grid grid-cols-2 gap-3">
-              <label
-                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm cursor-pointer transition
-                ${bus === "yes" ? "border-pink-300 bg-pink-50" : "border-black/15 hover:bg-black/5"}`}
-              >
-                <input
-                  type="radio"
-                  name="bus"
-                  value="yes"
-                  checked={bus === "yes"}
-                  onChange={() => setBus("yes")}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.yes}
-              </label>
-              <label
-                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm cursor-pointer transition
-                ${bus === "no" ? "border-pink-300 bg-pink-50" : "border-black/15 hover:bg-black/5"}`}
-              >
-                <input
-                  type="radio"
-                  name="bus"
-                  value="no"
-                  checked={bus === "no"}
-                  onChange={() => setBus("no")}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.no}
-              </label>
-            </div>
-            <p className="text-xs text-black/60">{t.rsvp.busHelper}</p>
-          </fieldset>
-
-          <fieldset className="space-y-2">
-            <legend className="text-sm font-medium">{t.rsvp.dietLabel}</legend>
-            <div className="mt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <label className="inline-flex items-center gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  checked={vegetarian}
-                  onChange={(e) => setVegetarian(e.target.checked)}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.vegetarian}
-              </label>
-              <label className="inline-flex items-center gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  checked={vegan}
-                  onChange={(e) => setVegan(e.target.checked)}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.vegan}
-              </label>
-              <label className="inline-flex items-center gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  checked={celiac}
-                  onChange={(e) => setCeliac(e.target.checked)}
-                  className="accent-pink-500"
-                />
-                {t.rsvp.celiac}
-              </label>
-            </div>
-          </fieldset>
-
-          <div>
-            <label htmlFor="allergies" className="block text-sm font-medium">
-              {t.rsvp.allergiesLabel}
-            </label>
-            <textarea
-              id="allergies"
-              value={allergies}
-              onChange={(e) => setAllergies(e.target.value)}
-              rows={4}
-              placeholder={t.rsvp.allergiesPlaceholder ?? ""}
-              className="mt-1 w-full rounded-lg border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-pink-300"
-            />
-            <p className="mt-1 text-xs text-black/60">
-              {t.rsvp.allergiesHelper}
-            </p>
-          </div>
-
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-md bg-pink-500 text-white px-4 py-2 text-sm font-medium hover:bg-pink-600 disabled:opacity-60"
-            disabled={disableSubmit}
+      <AnimatePresence mode="wait">
+        {submitted ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="relative overflow-hidden rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-8 shadow-lg"
           >
-            {submitting ? (t.rsvp.submitting ?? "Enviant...") : t.rsvp.submit}
-          </button>
-        </form>
-      )}
-    </section>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/30 rounded-full blur-2xl" />
+            <div className="relative flex items-start gap-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex-shrink-0">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-green-900 mb-1">
+                  Confirmació rebuda!
+                </h3>
+                <p className="text-sm text-green-800">{t.rsvp.success}</p>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.form
+            key="form"
+            variants={fadeInUp}
+            onSubmit={handleSubmit}
+            className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-gray-100 bg-white/80 backdrop-blur-sm p-8 shadow-xl"
+          >
+            {/* Decorative gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-transparent to-blue-50/50 rounded-3xl pointer-events-none" />
+
+            <div className="relative space-y-6">
+              <AnimatePresence>
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="rounded-xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-blue-50 p-4 shadow-sm">
+                      <div className="flex items-start gap-3">
+                        <svg
+                          className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <p className="text-sm text-red-700 font-medium">{error}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Full Name */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="fullName"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  {t.rsvp.fullName}
+                </label>
+                <div className="relative">
+                  <input
+                    id="fullName"
+                    type="text"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder={t.rsvp.fullNamePlaceholder ?? ""}
+                    className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-teal-300 focus:ring-4 focus:ring-teal-100 hover:border-gray-300"
+                  />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Attending */}
+              <motion.fieldset variants={fadeInUp} className="space-y-3">
+                <legend className="text-sm font-semibold text-gray-700">
+                  {t.rsvp.willAttend}
+                </legend>
+                <div className="grid grid-cols-2 gap-4">
+                  {(["yes", "no"] as const).map((value) => (
+                    <motion.label
+                      key={value}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
+                        attending === value
+                          ? "border-teal-400 bg-gradient-to-br from-teal-50 to-blue-50 shadow-md shadow-teal-100"
+                          : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="attending"
+                        value={value}
+                        checked={attending === value}
+                        onChange={() => setAttending(value)}
+                        className="peer sr-only"
+                      />
+                      <div
+                        className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
+                          attending === value
+                            ? "border-teal-500 bg-teal-500"
+                            : "border-gray-300"
+                        }`}
+                      >
+                        {attending === value && (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="w-2 h-2 rounded-full bg-white"
+                          />
+                        )}
+                      </div>
+                      <span className={attending === value ? "text-pink-700" : "text-gray-700"}>
+                        {value === "yes" ? t.rsvp.yes : t.rsvp.no}
+                      </span>
+                    </motion.label>
+                  ))}
+                </div>
+              </motion.fieldset>
+
+              {/* Bus */}
+              <motion.fieldset variants={fadeInUp} className="space-y-3">
+                <legend className="text-sm font-semibold text-gray-700">
+                  {t.rsvp.busQuestion}
+                </legend>
+                <div className="grid grid-cols-2 gap-4">
+                  {(["yes", "no"] as const).map((value) => (
+                    <motion.label
+                      key={value}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
+                        bus === value
+                          ? "border-blue-400 bg-gradient-to-br from-blue-50 to-teal-50 shadow-md shadow-blue-100"
+                          : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="bus"
+                        value={value}
+                        checked={bus === value}
+                        onChange={() => setBus(value)}
+                        className="peer sr-only"
+                      />
+                      <div
+                        className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
+                          bus === value
+                            ? "border-blue-500 bg-blue-500"
+                            : "border-gray-300"
+                        }`}
+                      >
+                        {bus === value && (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="w-2 h-2 rounded-full bg-white"
+                          />
+                        )}
+                      </div>
+                      <span className={bus === value ? "text-rose-700" : "text-gray-700"}>
+                        {value === "yes" ? t.rsvp.yes : t.rsvp.no}
+                      </span>
+                    </motion.label>
+                  ))}
+                </div>
+                <p className="text-xs text-gray-500 flex items-start gap-2">
+                  <svg
+                    className="w-4 h-4 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  {t.rsvp.busHelper}
+                </p>
+              </motion.fieldset>
+
+              {/* Dietary Preferences */}
+              <motion.fieldset variants={fadeInUp} className="space-y-3">
+                <legend className="text-sm font-semibold text-gray-700">
+                  {t.rsvp.dietLabel}
+                </legend>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { key: "vegetarian", value: vegetarian, setter: setVegetarian, label: t.rsvp.vegetarian },
+                    { key: "vegan", value: vegan, setter: setVegan, label: t.rsvp.vegan },
+                    { key: "celiac", value: celiac, setter: setCeliac, label: t.rsvp.celiac },
+                  ].map((item) => (
+                    <motion.label
+                      key={item.key}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm font-medium cursor-pointer transition-all ${
+                        item.value
+                          ? "border-teal-300 bg-gradient-to-br from-teal-50 to-blue-50 shadow-sm"
+                          : "border-gray-200 bg-white hover:border-gray-300"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={item.value}
+                        onChange={(e) => item.setter(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div
+                        className={`flex items-center justify-center w-5 h-5 rounded border-2 transition-all ${
+                          item.value
+                            ? "border-teal-500 bg-teal-500"
+                            : "border-gray-300 bg-white"
+                        }`}
+                      >
+                        {item.value && (
+                          <motion.svg
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="w-3 h-3 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={3}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </motion.svg>
+                        )}
+                      </div>
+                      <span className={item.value ? "text-pink-700" : "text-gray-700"}>
+                        {item.label}
+                      </span>
+                    </motion.label>
+                  ))}
+                </div>
+              </motion.fieldset>
+
+              {/* Allergies */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="allergies"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  {t.rsvp.allergiesLabel}
+                </label>
+                <textarea
+                  id="allergies"
+                  value={allergies}
+                  onChange={(e) => setAllergies(e.target.value)}
+                  rows={4}
+                  placeholder={t.rsvp.allergiesPlaceholder ?? ""}
+                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-teal-300 focus:ring-4 focus:ring-teal-100 hover:border-gray-300 resize-none"
+                />
+                <p className="mt-2 text-xs text-gray-500 flex items-start gap-2">
+                  <svg
+                    className="w-4 h-4 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  {t.rsvp.allergiesHelper}
+                </p>
+              </motion.div>
+
+              {/* Submit Button */}
+              <motion.div variants={fadeInUp}>
+                <motion.button
+                  type="submit"
+                  disabled={disableSubmit}
+                  whileHover={!disableSubmit ? { scale: 1.02 } : {}}
+                  whileTap={!disableSubmit ? { scale: 0.98 } : {}}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-4 text-base font-semibold shadow-lg shadow-teal-200 transition-all hover:shadow-xl hover:shadow-teal-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {submitting ? (
+                    <>
+                      <svg
+                        className="animate-spin h-5 w-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        />
+                      </svg>
+                      <span>{t.rsvp.submitting ?? "Enviant..."}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>{t.rsvp.submit}</span>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </>
+                  )}
+                </motion.button>
+              </motion.div>
+            </div>
+          </motion.form>
+        )}
+      </AnimatePresence>
+    </motion.section>
   );
 }
