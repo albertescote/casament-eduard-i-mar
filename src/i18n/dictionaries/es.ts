@@ -12,12 +12,20 @@ export const es = {
       "¡Nos casamos! Explora los detalles del día, consulta el horario y confirma si podrás venir.",
     ctaSchedule: "Ver horario",
     ctaRsvp: "Confirmar asistencia",
-    datePlace: "12 de julio de 2026 · Barcelona, España",
+    datePlace: "12 de julio de 2026 · Valls, Cataluña",
     infoTitle: "Información general",
     infoText: "Lugar, fecha, transporte y alojamiento.",
     scheduleTitle: "Horario del día",
     scheduleText:
       "Horarios de la ceremonia, el aperitivo, la cena y la fiesta.",
+    countdown: {
+      title: "Cuenta atrás",
+      subtitle: "Tiempo restante hasta el gran día",
+      days: "Días",
+      hours: "Horas",
+      minutes: "Minutos",
+      seconds: "Segundos",
+    },
   },
   wedding: {
     scheduleTitle: "Horario del Día",
