@@ -84,8 +84,8 @@ export default function Home({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-500/30 via-blue-400/20 to-sky-400/30" />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
         {/* Floating Decorative Elements */}
@@ -110,7 +110,7 @@ export default function Home({
               delay: 1
             }
           }}
-          className="absolute bottom-32 right-16 w-16 h-16 rounded-full bg-teal-300/20 backdrop-blur-sm"
+          className="absolute bottom-32 right-16 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm"
         />
         <motion.div
           animate={{
@@ -122,7 +122,7 @@ export default function Home({
               delay: 2
             }
           }}
-          className="absolute top-40 right-32 w-12 h-12 rounded-full bg-blue-300/20 backdrop-blur-sm"
+          className="absolute top-40 right-32 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm"
         />
 
         {/* Hero Content */}
@@ -135,7 +135,7 @@ export default function Home({
             className="mb-6"
           >
             <div className="inline-block px-6 py-2 rounded-full bg-white/90 backdrop-blur-sm mb-6">
-              <p className="text-sm font-medium text-teal-600">
+              <p className="text-sm font-medium text-gray-900">
                 {t.home.datePlace}
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function Home({
           >
             <Link
               href={`/${locale}/wedding`}
-              className="group inline-flex items-center justify-center rounded-full bg-white text-teal-600 px-8 py-4 text-base font-semibold hover:bg-teal-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
             >
               {t.home.ctaSchedule}
               <svg
@@ -175,7 +175,7 @@ export default function Home({
             </Link>
             <Link
               href={`/${locale}/rsvp`}
-              className="group inline-flex items-center justify-center rounded-full bg-teal-500 text-white px-8 py-4 text-base font-semibold hover:bg-teal-600 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="group inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
             >
               {t.home.ctaRsvp}
               <svg
@@ -247,7 +247,7 @@ export default function Home({
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
 
           {/* Medium Image Card */}
@@ -262,7 +262,7 @@ export default function Home({
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-500/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
         </div>
       </motion.section>
@@ -278,11 +278,11 @@ export default function Home({
         <div className="grid gap-8 sm:grid-cols-2 max-w-5xl mx-auto">
           <motion.div
             variants={scaleIn}
-            className="group relative overflow-hidden rounded-3xl border-2 border-teal-100 p-8 bg-gradient-to-br from-white to-teal-50/50 hover:shadow-2xl hover:shadow-teal-200/50 transition-all duration-500 hover:-translate-y-2"
+            className="group relative overflow-hidden rounded-3xl border-2 border-gray-200 p-8 bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-teal-200/20 rounded-full blur-3xl group-hover:bg-teal-300/30 transition-all duration-500" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100/50 rounded-full blur-3xl group-hover:bg-gray-200/50 transition-all duration-500" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-400 to-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-gray-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -294,11 +294,11 @@ export default function Home({
 
           <motion.div
             variants={scaleIn}
-            className="group relative overflow-hidden rounded-3xl border-2 border-blue-100 p-8 bg-gradient-to-br from-white to-blue-50/50 hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 hover:-translate-y-2"
+            className="group relative overflow-hidden rounded-3xl border-2 border-gray-200 p-8 bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl group-hover:bg-blue-300/30 transition-all duration-500" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100/50 rounded-full blur-3xl group-hover:bg-gray-200/50 transition-all duration-500" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-teal-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-gray-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -334,7 +334,7 @@ export default function Home({
                 sizes="100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-600/80 to-blue-600/80" />
+              <div className="absolute inset-0 bg-gray-900/80" />
             </div>
             <div className="relative z-10 py-20 px-8">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
@@ -345,7 +345,7 @@ export default function Home({
               </p>
               <Link
                 href={`/${locale}/wedding`}
-                className="inline-flex items-center justify-center rounded-full bg-white text-teal-600 px-8 py-4 text-base font-semibold hover:bg-teal-50 transition-all duration-300 hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 Veure detalls
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -5,6 +5,12 @@
   --foreground: #171717;
   --accent-pink-50: #fff1f5;
   --accent-pink-100: #ffe4ec;
+
+  /* New neutral palette with subtle pastel accents */
+  --color-primary: #1f2937; /* gray-800 */
+  --color-secondary: #4b5563; /* gray-600 */
+  --color-accent-subtle: #e0f2f1; /* very soft teal */
+  --color-accent-subtle-2: #e3f2fd; /* very soft blue */
 }
 
 @theme inline {

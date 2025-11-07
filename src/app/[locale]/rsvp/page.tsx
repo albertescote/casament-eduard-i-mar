@@ -41,7 +41,7 @@ export default function RsvpPage({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -54,7 +54,7 @@ export default function RsvpPage({
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -67,7 +67,7 @@ export default function RsvpPage({
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-sky-200/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -86,7 +86,7 @@ export default function RsvpPage({
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8 text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-lg mb-4">
               <svg
                 className="w-8 h-8 text-white"
                 fill="none"
@@ -118,7 +118,7 @@ export default function RsvpPage({
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-32 right-20 w-12 h-12 rounded-full bg-gradient-to-br from-teal-300/30 to-blue-300/30 backdrop-blur-sm"
+        className="absolute top-32 right-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm"
       />
       <motion.div
         animate={{
@@ -131,7 +131,7 @@ export default function RsvpPage({
           ease: "easeInOut",
           delay: 1,
         }}
-        className="absolute bottom-40 left-16 w-16 h-16 rounded-full bg-gradient-to-br from-blue-300/30 to-teal-300/30 backdrop-blur-sm"
+        className="absolute bottom-40 left-16 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm"
       />
     </section>
   );

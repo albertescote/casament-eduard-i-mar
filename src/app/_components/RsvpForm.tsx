@@ -82,7 +82,7 @@ export function RsvpForm({ t }: { t: Dict }) {
       className="space-y-6"
     >
       <motion.div variants={fadeInUp} className="text-center space-y-3">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
           {t.rsvp.title}
         </h1>
         <p className="text-base text-gray-600 max-w-2xl mx-auto">
@@ -97,11 +97,11 @@ export function RsvpForm({ t }: { t: Dict }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="relative overflow-hidden rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-8 shadow-lg"
+            className="relative overflow-hidden rounded-2xl border-2 border-emerald-100 bg-white p-8 shadow-lg"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/30 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/50 rounded-full blur-2xl" />
             <div className="relative flex items-start gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex-shrink-0">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-600 shadow-lg flex-shrink-0">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -117,10 +117,10 @@ export function RsvpForm({ t }: { t: Dict }) {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-green-900 mb-1">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Confirmació rebuda!
                 </h3>
-                <p className="text-sm text-green-800">{t.rsvp.success}</p>
+                <p className="text-sm text-gray-700">{t.rsvp.success}</p>
               </div>
             </div>
           </motion.div>
@@ -132,7 +132,7 @@ export function RsvpForm({ t }: { t: Dict }) {
             className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-gray-100 bg-white/80 backdrop-blur-sm p-8 shadow-xl"
           >
             {/* Decorative gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-transparent to-blue-50/50 rounded-3xl pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 via-transparent to-gray-50/30 rounded-3xl pointer-events-none" />
 
             <div className="relative space-y-6">
               <AnimatePresence>
@@ -143,10 +143,10 @@ export function RsvpForm({ t }: { t: Dict }) {
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="rounded-xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-blue-50 p-4 shadow-sm">
+                    <div className="rounded-xl border-2 border-red-100 bg-red-50/50 p-4 shadow-sm">
                       <div className="flex items-start gap-3">
                         <svg
-                          className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"
+                          className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -158,7 +158,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
-                        <p className="text-sm text-red-700 font-medium">{error}</p>
+                        <p className="text-sm text-gray-900 font-medium">{error}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -181,7 +181,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder={t.rsvp.fullNamePlaceholder ?? ""}
-                    className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-teal-300 focus:ring-4 focus:ring-teal-100 hover:border-gray-300"
+                    className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-gray-400 focus:ring-4 focus:ring-gray-100 hover:border-gray-300"
                   />
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <svg
@@ -214,7 +214,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         attending === value
-                          ? "border-teal-400 bg-gradient-to-br from-teal-50 to-blue-50 shadow-md shadow-teal-100"
+                          ? "border-gray-400 bg-gray-50 shadow-md"
                           : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
                       }`}
                     >
@@ -229,7 +229,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
                           attending === value
-                            ? "border-teal-500 bg-teal-500"
+                            ? "border-gray-900 bg-gray-900"
                             : "border-gray-300"
                         }`}
                       >
@@ -241,7 +241,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                           />
                         )}
                       </div>
-                      <span className={attending === value ? "text-pink-700" : "text-gray-700"}>
+                      <span className={attending === value ? "text-gray-900" : "text-gray-700"}>
                         {value === "yes" ? t.rsvp.yes : t.rsvp.no}
                       </span>
                     </motion.label>
@@ -262,7 +262,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         bus === value
-                          ? "border-blue-400 bg-gradient-to-br from-blue-50 to-teal-50 shadow-md shadow-blue-100"
+                          ? "border-gray-400 bg-gray-50 shadow-md"
                           : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
                       }`}
                     >
@@ -277,7 +277,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
                           bus === value
-                            ? "border-blue-500 bg-blue-500"
+                            ? "border-gray-900 bg-gray-900"
                             : "border-gray-300"
                         }`}
                       >
@@ -289,7 +289,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                           />
                         )}
                       </div>
-                      <span className={bus === value ? "text-rose-700" : "text-gray-700"}>
+                      <span className={bus === value ? "text-gray-900" : "text-gray-700"}>
                         {value === "yes" ? t.rsvp.yes : t.rsvp.no}
                       </span>
                     </motion.label>
@@ -330,7 +330,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm font-medium cursor-pointer transition-all ${
                         item.value
-                          ? "border-teal-300 bg-gradient-to-br from-teal-50 to-blue-50 shadow-sm"
+                          ? "border-gray-400 bg-gray-50 shadow-sm"
                           : "border-gray-200 bg-white hover:border-gray-300"
                       }`}
                     >
@@ -343,7 +343,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded border-2 transition-all ${
                           item.value
-                            ? "border-teal-500 bg-teal-500"
+                            ? "border-gray-900 bg-gray-900"
                             : "border-gray-300 bg-white"
                         }`}
                       >
@@ -365,7 +365,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                           </motion.svg>
                         )}
                       </div>
-                      <span className={item.value ? "text-pink-700" : "text-gray-700"}>
+                      <span className={item.value ? "text-gray-900" : "text-gray-700"}>
                         {item.label}
                       </span>
                     </motion.label>
@@ -387,7 +387,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                   onChange={(e) => setAllergies(e.target.value)}
                   rows={4}
                   placeholder={t.rsvp.allergiesPlaceholder ?? ""}
-                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-teal-300 focus:ring-4 focus:ring-teal-100 hover:border-gray-300 resize-none"
+                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-gray-400 focus:ring-4 focus:ring-gray-100 hover:border-gray-300 resize-none"
                 />
                 <p className="mt-2 text-xs text-gray-500 flex items-start gap-2">
                   <svg
@@ -414,7 +414,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                   disabled={disableSubmit}
                   whileHover={!disableSubmit ? { scale: 1.02 } : {}}
                   whileTap={!disableSubmit ? { scale: 0.98 } : {}}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-4 text-base font-semibold shadow-lg shadow-teal-200 transition-all hover:shadow-xl hover:shadow-teal-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {submitting ? (
                     <>

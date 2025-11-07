@@ -19,11 +19,11 @@ export function Hotel({
         rel="noopener noreferrer"
         className="flex items-start justify-between gap-2 mb-2"
       >
-        <span className="font-semibold text-stone-800 group-hover:text-rose-600 transition-colors">
+        <span className="font-semibold text-stone-800 group-hover:text-gray-900 transition-colors">
           {name}
         </span>
         <svg
-          className="w-4 h-4 text-stone-400 group-hover:text-rose-600 flex-shrink-0 mt-0.5 transition-colors"
+          className="w-4 h-4 text-stone-400 group-hover:text-gray-900 flex-shrink-0 mt-0.5 transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

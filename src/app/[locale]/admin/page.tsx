@@ -120,12 +120,12 @@ export default function AdminPage({
         <motion.div
           animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-10 left-10 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-10 right-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+          className="absolute bottom-10 right-10 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
         />
 
         <motion.section
@@ -134,16 +134,16 @@ export default function AdminPage({
           transition={{ duration: 0.6 }}
           className="relative z-10 w-full max-w-md mx-auto"
         >
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-teal-100/50 border border-teal-100/50 p-8 sm:p-10 space-y-6">
+          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200 p-8 sm:p-10 space-y-6">
             {/* Icon */}
-            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-900 shadow-lg">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
 
             <div className="text-center">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold text-gray-900">
                 {t.admin.title}
               </h1>
               <p className="text-sm text-gray-600 mt-2">
@@ -169,7 +169,7 @@ export default function AdminPage({
                   onChange={(e) => setKey(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && !loading && key && login()}
                   placeholder={t.admin.masterKeyPlaceholder}
-                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-teal-400 focus:ring-4 focus:ring-teal-100"
+                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-gray-400 focus:ring-4 focus:ring-gray-100"
                 />
               </div>
 
@@ -178,7 +178,7 @@ export default function AdminPage({
                 whileTap={{ scale: 0.98 }}
                 onClick={login}
                 disabled={loading || !key}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 text-sm font-medium shadow-lg shadow-teal-200 transition-all duration-300 hover:shadow-xl hover:shadow-teal-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <>
@@ -210,12 +210,12 @@ export default function AdminPage({
       <motion.div
         animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-0 w-72 h-72 bg-teal-200/10 rounded-full blur-3xl -z-10"
+        className="absolute top-0 left-0 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl -z-10"
       />
       <motion.div
         animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl -z-10"
+        className="absolute bottom-0 right-0 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl -z-10"
       />
 
       <motion.section
@@ -225,24 +225,24 @@ export default function AdminPage({
         className="space-y-6"
       >
         {/* Header Card */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl shadow-teal-100/50 border border-teal-100/50 p-6">
+        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-gray-200 p-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-md">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shadow-md">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold text-gray-900">
                   {t.admin.rsvpsTitle}
                 </h1>
               </div>
 
               <div className="flex flex-wrap gap-3 mt-3">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200">
                   <span className="text-xs text-gray-600">{t.admin.statsTotal}:</span>
-                  <span className="text-sm font-bold text-teal-700">{totals.total}</span>
+                  <span className="text-sm font-bold text-gray-900">{totals.total}</span>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 border border-green-200">
                   <span className="text-xs text-gray-600">{t.admin.statsAttending}:</span>
@@ -252,9 +252,9 @@ export default function AdminPage({
                   <span className="text-xs text-gray-600">{t.admin.statsNotAttending}:</span>
                   <span className="text-sm font-bold text-red-700">{totals.attendingNo}</span>
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200">
                   <span className="text-xs text-gray-600">{t.admin.statsBus}:</span>
-                  <span className="text-sm font-bold text-blue-700">{totals.busYes}</span>
+                  <span className="text-sm font-bold text-gray-900">{totals.busYes}</span>
                 </div>
               </div>
             </div>
@@ -263,7 +263,7 @@ export default function AdminPage({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={exportCsv}
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white px-4 py-2.5 text-sm font-medium shadow-lg shadow-teal-200 transition-all duration-300 hover:shadow-xl hover:shadow-teal-300"
+              className="inline-flex items-center gap-2 rounded-xl bg-gray-900 text-white px-4 py-2.5 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -278,11 +278,11 @@ export default function AdminPage({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl shadow-teal-100/50 border border-teal-100/50 overflow-hidden"
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-gray-200 overflow-hidden"
         >
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
-              <thead className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+              <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">{t.admin.tableCreated}</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">{t.admin.tableFullName}</th>
@@ -299,7 +299,7 @@ export default function AdminPage({
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className="align-top hover:bg-teal-50/30 transition-colors duration-200"
+                    className="align-top hover:bg-gray-50 transition-colors duration-200"
                   >
                     <td className="px-4 py-3 whitespace-nowrap text-gray-600 text-xs">
                       {new Date(r.createdAt).toLocaleString()}
@@ -324,7 +324,7 @@ export default function AdminPage({
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap">
                       {r.bus ? (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-blue-700">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-700">
                           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -337,7 +337,7 @@ export default function AdminPage({
                     <td className="px-4 py-3">
                       <div className="flex flex-wrap gap-1.5">
                         {r.vegetarian && (
-                          <span className="inline-flex items-center rounded-full bg-teal-100 border border-teal-200 px-2 py-0.5 text-xs font-medium text-teal-700">
+                          <span className="inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-2 py-0.5 text-xs font-medium text-gray-700">
                             🥗 {t.admin.vegetarian}
                           </span>
                         )}

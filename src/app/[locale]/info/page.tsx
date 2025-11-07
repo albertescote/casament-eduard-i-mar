@@ -75,14 +75,14 @@ export default function Faqs({
             {t.faqs.iban.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-            <code className="select-all text-xs font-mono tracking-wide bg-teal-50 px-4 py-3 rounded-xl border-2 border-teal-200 shadow-sm">
+            <code className="select-all text-xs font-mono tracking-wide bg-gray-50 px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm">
               ES00 0000 0000 0000 0000 0000
             </code>
             <CopyButton text="ES00 0000 0000 0000 0000 0000" locale={locale} />
           </div>
-          <div className="flex items-center gap-2 p-3 bg-blue-50 rounded-xl border border-blue-200">
+          <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-xl border border-gray-200">
             <svg
-              className="w-5 h-5 text-blue-600 flex-shrink-0"
+              className="w-5 h-5 text-gray-600 flex-shrink-0"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -92,7 +92,7 @@ export default function Faqs({
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm text-rose-900 font-medium">
+            <p className="text-sm text-gray-900 font-medium">
               {t.faqs.iban.thanks}
             </p>
           </div>
@@ -118,11 +118,11 @@ export default function Faqs({
               href="https://instagram.com/maria.ijoan2025"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 p-4 bg-gradient-to-r from-teal-50 to-sky-50 rounded-xl border-2 border-teal-200 hover:border-teal-300 transition-all hover:shadow-md group"
+              className="inline-flex items-center gap-3 p-4 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all hover:shadow-md group"
             >
               <div className="p-2 bg-white rounded-lg shadow-sm">
                 <svg
-                  className="w-5 h-5 text-teal-600"
+                  className="w-5 h-5 text-gray-600"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -130,7 +130,7 @@ export default function Faqs({
                   <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4ZM17.8 6.2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
                 </svg>
               </div>
-              <span className="font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
+              <span className="font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
                 @maria.ijoan2025
               </span>
               <svg
@@ -149,7 +149,7 @@ export default function Faqs({
             </Link>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>{t.faqs.instagram.hashtag}</span>
-              <code className="font-mono text-teal-600 bg-teal-50 px-2 py-1 rounded border border-teal-200">
+              <code className="font-mono text-gray-900 bg-gray-50 px-2 py-1 rounded border border-gray-200">
                 #MariaiJoan2025
               </code>
             </div>
@@ -223,9 +223,9 @@ export default function Faqs({
           <p className="text-gray-700 leading-relaxed">
             {t.faqs.gallery.description}
           </p>
-          <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
+          <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <svg
-              className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"
+              className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -237,7 +237,7 @@ export default function Faqs({
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p className="text-sm text-blue-900">{t.faqs.gallery.note}</p>
+            <p className="text-sm text-gray-900">{t.faqs.gallery.note}</p>
           </div>
         </div>
       ),
@@ -265,9 +265,9 @@ export default function Faqs({
           <p className="text-gray-700 leading-relaxed">
             {t.faqs.dresscode.description}
           </p>
-          <div className="flex items-start gap-3 p-4 bg-sky-50 rounded-xl border border-sky-200">
+          <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <svg
-              className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5"
+              className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -279,7 +279,7 @@ export default function Faqs({
                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
               />
             </svg>
-            <p className="text-sm text-sky-900">{t.faqs.dresscode.note}</p>
+            <p className="text-sm text-gray-900">{t.faqs.dresscode.note}</p>
           </div>
         </div>
       ),
@@ -342,7 +342,7 @@ export default function Faqs({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-32 left-0 w-80 h-80 bg-teal-200/20 rounded-full blur-3xl"
+          className="absolute top-32 left-0 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -355,7 +355,7 @@ export default function Faqs({
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-32 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+          className="absolute bottom-32 right-0 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -368,7 +368,7 @@ export default function Faqs({
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute top-1/3 right-1/4 w-72 h-72 bg-sky-200/15 rounded-full blur-3xl"
+          className="absolute top-1/3 right-1/4 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -380,7 +380,7 @@ export default function Faqs({
         className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
       >
         <motion.div variants={fadeInUp} className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-lg mb-4">
             <svg
               className="w-8 h-8 text-white"
               fill="none"
@@ -395,10 +395,10 @@ export default function Faqs({
               />
             </svg>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-3">
             {t.faqs.title}
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-400 mx-auto rounded-full shadow-sm"></div>
+          <div className="w-24 h-1 bg-gray-900 mx-auto rounded-full shadow-sm"></div>
         </motion.div>
 
         <motion.div variants={fadeInUp} className="grid gap-4">

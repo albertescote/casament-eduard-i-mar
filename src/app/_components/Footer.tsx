@@ -14,17 +14,17 @@ export function Footer({ text, followJourney }: FooterProps) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden bg-gradient-to-br from-teal-50 to-blue-50 mt-20"
+      className="relative overflow-hidden bg-gray-50 mt-20"
     >
       {/* Gradient Divider */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-teal-300 to-transparent" />
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Brand Icon */}
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 shadow-lg">
             <svg
               className="h-6 w-6 text-white"
               viewBox="0 0 24 24"
@@ -45,7 +45,7 @@ export function Footer({ text, followJourney }: FooterProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow on Instagram"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-teal-200 transition-all duration-300 hover:shadow-xl hover:shadow-teal-300 hover:scale-105"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-gray-900 px-6 py-2.5 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800 hover:scale-105"
           >
             <svg
               className="h-4 w-4"
@@ -63,7 +63,7 @@ export function Footer({ text, followJourney }: FooterProps) {
             <p>© 2025 Eduard & Mar</p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="group flex items-center gap-1.5 text-gray-500 hover:text-teal-600 transition-colors"
+              className="group flex items-center gap-1.5 text-gray-500 hover:text-gray-900 transition-colors"
             >
               <span>Tornar a dalt</span>
               <svg

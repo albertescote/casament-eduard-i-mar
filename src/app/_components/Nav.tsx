@@ -70,12 +70,12 @@ export function Nav() {
           href={`/${locale}`}
           className="group flex items-center gap-2"
         >
-          <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-md group-hover:shadow-lg transition-shadow duration-300">
+          <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-900 shadow-md group-hover:shadow-lg transition-shadow duration-300">
             <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.646 20.86a1 1 0 0 0 .708 0C16.7 19.095 21 15.93 21 11.25 21 8.35 18.9 6 16.25 6A5.3 5.3 0 0 0 12 8.12 5.3 5.3 0 0 0 7.75 6C5.1 6 3 8.35 3 11.25c0 4.68 4.3 7.845 8.646 9.61Z" />
             </svg>
           </div>
-          <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+          <span className="font-bold text-lg tracking-tight text-gray-900">
             {t.nav.brand}
           </span>
         </Link>
@@ -91,11 +91,11 @@ export function Nav() {
                 className={
                   "group flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 " +
                   (active
-                    ? "bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-md shadow-teal-200"
-                    : "hover:bg-teal-50 text-gray-700 hover:text-teal-600")
+                    ? "bg-gray-900 text-white shadow-md"
+                    : "hover:bg-gray-100 text-gray-700 hover:text-gray-900")
                 }
               >
-                <span className={active ? "text-white" : "text-teal-500 group-hover:text-teal-600"}>
+                <span className={active ? "text-white" : "text-gray-500 group-hover:text-gray-700"}>
                   {link.icon}
                 </span>
                 <span className="text-sm font-medium">{link.label}</span>
@@ -120,8 +120,8 @@ export function Nav() {
                   className={
                     "p-2 rounded-full transition-all duration-300 " +
                     (active
-                      ? "bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-md"
-                      : "text-gray-600 hover:bg-teal-50 hover:text-teal-600")
+                      ? "bg-gray-900 text-white shadow-md"
+                      : "text-gray-600 hover:bg-gray-100 hover:text-gray-900")
                   }
                   title={link.label}
                 >

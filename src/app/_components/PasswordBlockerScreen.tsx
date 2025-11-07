@@ -44,12 +44,12 @@ export function PasswordBlockerScreen({
       <motion.div
         animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-10 left-10 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
       />
       <motion.div
         animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 right-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
       />
 
       <motion.div
@@ -60,17 +60,17 @@ export function PasswordBlockerScreen({
       >
         <form
           onSubmit={onSubmit}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-teal-100/50 border border-teal-100/50 p-8 sm:p-10 space-y-6"
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200 p-8 sm:p-10 space-y-6"
         >
           {/* Icon */}
-          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-teal-400 to-blue-400 shadow-lg">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-900 shadow-lg">
             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.646 20.86a1 1 0 0 0 .708 0C16.7 19.095 21 15.93 21 11.25 21 8.35 18.9 6 16.25 6A5.3 5.3 0 0 0 12 8.12 5.3 5.3 0 0 0 7.75 6C5.1 6 3 8.35 3 11.25c0 4.68 4.3 7.845 8.646 9.61Z" />
             </svg>
           </div>
 
           <div className="text-center">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-gray-900">
               {t.enter.enterPassword}
             </h1>
           </div>
@@ -93,13 +93,13 @@ export function PasswordBlockerScreen({
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t.enter.passwordPlaceholder}
                 autoFocus
-                className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-teal-400 focus:ring-4 focus:ring-teal-100"
+                className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-gray-400 focus:ring-4 focus:ring-gray-100"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? "Hide password" : "Show password"}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-teal-600 transition-colors duration-200"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-gray-900 transition-colors duration-200"
               >
                 <svg
                   className="w-5 h-5"
@@ -130,7 +130,7 @@ export function PasswordBlockerScreen({
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading || !password}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 text-sm font-medium shadow-lg shadow-teal-200 transition-all duration-300 hover:shadow-xl hover:shadow-teal-300 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>

@@ -24,10 +24,10 @@ export function AccordionItem({
         aria-controls={regionId}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-offset-2 rounded-2xl"
+        className="w-full flex items-center gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded-2xl"
       >
         <div
-          className={`p-3 rounded-xl transition-colors ${open ? "bg-rose-100 text-rose-600" : "bg-stone-100 text-stone-600"}`}
+          className={`p-3 rounded-xl transition-colors ${open ? "bg-gray-900 text-white" : "bg-stone-100 text-stone-600"}`}
         >
           {icon}
         </div>
@@ -47,7 +47,7 @@ export function AccordionItem({
           aria-hidden
           className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 transition-all ${
             open
-              ? "bg-rose-100 border-rose-300 text-rose-600 rotate-180"
+              ? "bg-gray-100 border-gray-300 text-gray-900 rotate-180"
               : "bg-white border-stone-300 text-stone-600"
           }`}
         >

@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { locales, type Locale, isLocale } from "@/i18n/config";
+import { isLocale, type Locale, locales } from "@/i18n/config";
 
 function replaceLocaleInPath(pathname: string, nextLocale: Locale) {
   const segments = pathname.split("/");
@@ -38,7 +38,7 @@ export function LanguageSwitcher() {
             className={
               "relative px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 " +
               (isActive
-                ? "bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-md"
+                ? "bg-gray-900 text-white shadow-md"
                 : "text-gray-600 hover:text-gray-900 hover:bg-white/50")
             }
           >
