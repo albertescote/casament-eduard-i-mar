@@ -42,7 +42,9 @@ export function middleware(request: NextRequest) {
   const maybeLocale = segments[0];
 
   if (isPublicPath(pathname, isLocale(maybeLocale) ? maybeLocale : undefined)) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set("x-pathname", pathname);
+    return response;
   }
 
   if (!maybeLocale || !isLocale(maybeLocale)) {
@@ -62,7 +64,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  response.headers.set("x-pathname", pathname);
+  return response;
 }
 
 export const config = {

@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const cookieStore = await cookies();
-  cookieStore.set("admin_session", "ok", {
+  cookieStore.set("admin_session_772165ca-7ca8-487f-b332-2aaf7247a3c6", "ok", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",

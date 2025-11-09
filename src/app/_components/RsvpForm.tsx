@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { getDictionary } from "@/i18n/getDictionary";
 
 type Dict = ReturnType<typeof getDictionary>;
@@ -11,8 +11,8 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 }
-  }
+    transition: { duration: 0.5 },
+  },
 };
 
 const staggerContainer = {
@@ -21,9 +21,9 @@ const staggerContainer = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
+      delayChildren: 0.2,
+    },
+  },
 };
 
 export function RsvpForm({ t }: { t: Dict }) {
@@ -88,6 +88,33 @@ export function RsvpForm({ t }: { t: Dict }) {
         <p className="text-base text-gray-600 max-w-2xl mx-auto">
           {t.rsvp.lead}
         </p>
+      </motion.div>
+
+      {/* Warning Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mb-6 mx-4 sm:mx-0"
+      >
+        <div className="flex items-start gap-3 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl shadow-md">
+          <svg
+            className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          <p className="text-sm text-amber-900 font-medium leading-relaxed">
+            {t.rsvp.warningBanner}
+          </p>
+        </div>
       </motion.div>
 
       <AnimatePresence mode="wait">
@@ -158,7 +185,9 @@ export function RsvpForm({ t }: { t: Dict }) {
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
-                        <p className="text-sm text-gray-900 font-medium">{error}</p>
+                        <p className="text-sm text-gray-900 font-medium">
+                          {error}
+                        </p>
                       </div>
                     </div>
                   </motion.div>
@@ -241,7 +270,13 @@ export function RsvpForm({ t }: { t: Dict }) {
                           />
                         )}
                       </div>
-                      <span className={attending === value ? "text-gray-900" : "text-gray-700"}>
+                      <span
+                        className={
+                          attending === value
+                            ? "text-gray-900"
+                            : "text-gray-700"
+                        }
+                      >
                         {value === "yes" ? t.rsvp.yes : t.rsvp.no}
                       </span>
                     </motion.label>
@@ -289,7 +324,11 @@ export function RsvpForm({ t }: { t: Dict }) {
                           />
                         )}
                       </div>
-                      <span className={bus === value ? "text-gray-900" : "text-gray-700"}>
+                      <span
+                        className={
+                          bus === value ? "text-gray-900" : "text-gray-700"
+                        }
+                      >
                         {value === "yes" ? t.rsvp.yes : t.rsvp.no}
                       </span>
                     </motion.label>
@@ -320,9 +359,24 @@ export function RsvpForm({ t }: { t: Dict }) {
                 </legend>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
-                    { key: "vegetarian", value: vegetarian, setter: setVegetarian, label: t.rsvp.vegetarian },
-                    { key: "vegan", value: vegan, setter: setVegan, label: t.rsvp.vegan },
-                    { key: "celiac", value: celiac, setter: setCeliac, label: t.rsvp.celiac },
+                    {
+                      key: "vegetarian",
+                      value: vegetarian,
+                      setter: setVegetarian,
+                      label: t.rsvp.vegetarian,
+                    },
+                    {
+                      key: "vegan",
+                      value: vegan,
+                      setter: setVegan,
+                      label: t.rsvp.vegan,
+                    },
+                    {
+                      key: "celiac",
+                      value: celiac,
+                      setter: setCeliac,
+                      label: t.rsvp.celiac,
+                    },
                   ].map((item) => (
                     <motion.label
                       key={item.key}
@@ -365,7 +419,11 @@ export function RsvpForm({ t }: { t: Dict }) {
                           </motion.svg>
                         )}
                       </div>
-                      <span className={item.value ? "text-gray-900" : "text-gray-700"}>
+                      <span
+                        className={
+                          item.value ? "text-gray-900" : "text-gray-700"
+                        }
+                      >
                         {item.label}
                       </span>
                     </motion.label>

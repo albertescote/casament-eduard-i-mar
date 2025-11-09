@@ -25,6 +25,9 @@ export const ca = {
       minutes: "Minuts",
       seconds: "Segons",
     },
+    ctaTitle: "No et perdis cap detall",
+    ctaDescription: "Descobreix tota la informació sobre el gran dia",
+    ctaButton: "Veure detalls",
   },
   wedding: {
     scheduleTitle: "Horari del Dia",
@@ -50,8 +53,10 @@ export const ca = {
       "Una masia catalana envoltada de natura i amb vistes espectaculars. L'espai perfecte per celebrar el nostre enllaç.",
   },
   rsvp: {
-    title: "Confirmació d’assistència",
-    lead: "Confirma l’assistència i necessitats perquè puguem organitzar-ho tot.",
+    title: "Confirmació d'assistència",
+    lead: "Confirma l'assistència i necessitats perquè puguem organitzar-ho tot.",
+    warningBanner:
+      "Atenció: La confirmació és individual. Cada convidat ha d'emplenar el formulari per separat.",
     success: "Gràcies! Hem registrat la teva resposta 🎉",
     fullName: "Nom i cognoms",
     fullNamePlaceholder: "Escriu el teu nom complet",
@@ -60,7 +65,7 @@ export const ca = {
     no: "No",
     busQuestion: "Necessites autobus?",
     busHelper: "Sortida i tornada des del punt acordat.",
-    dietLabel: "Preferències alimentàries",
+    dietLabel: "Menú especial",
     vegetarian: "Vegetarià",
     vegan: "Vegà",
     celiac: "Celíac",
@@ -75,10 +80,6 @@ export const ca = {
     passwordPlaceholder: "Contrasenya",
     submit: "Confirmar",
     invalidPassword: "Contrasenya incorrecta",
-  },
-  footer: {
-    text: "Fet amb amor per al nostre gran dia: vine a celebrar-ho amb nosaltres i mantén-te al corrent",
-    followJourney: "Segueix-nos en el nostre viatge junts",
   },
   faqs: {
     title: "Preguntes Freqüents",
@@ -150,7 +151,7 @@ export const ca = {
     tableFullName: "Nom complet",
     tableAttending: "Assisteix",
     tableBus: "Bus",
-    tableDietary: "Alimentació",
+    tableDietary: "Menú especial",
     tableAllergies: "Al·lèrgies",
     yes: "Sí",
     no: "No",

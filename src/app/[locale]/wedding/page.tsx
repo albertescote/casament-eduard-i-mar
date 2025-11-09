@@ -24,8 +24,8 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 }
-  }
+    transition: { duration: 0.6 },
+  },
 };
 
 const staggerContainer = {
@@ -34,9 +34,9 @@ const staggerContainer = {
     opacity: 1,
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.2
-    }
-  }
+      delayChildren: 0.2,
+    },
+  },
 };
 
 export default function WeddingPage({
@@ -44,12 +44,10 @@ export default function WeddingPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const [locale, setLocale] = useState<string>("ca");
   const [t, setT] = useState<typeof ca | typeof es | null>(null);
 
   useEffect(() => {
     params.then(({ locale: l }) => {
-      setLocale(l);
       setT(getDictionary((l as Locale) ?? "ca"));
     });
   }, [params]);
@@ -60,50 +58,8 @@ export default function WeddingPage({
 
   return (
     <section className="relative min-h-screen bg-white">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            y: [0, -40, 0],
-            x: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-40 -left-20 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, 40, 0],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute bottom-40 -right-20 w-[32rem] h-[32rem] bg-gray-200/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-gray-200/10 rounded-full blur-3xl"
-        />
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 w-full">
+      <div className="relative w-full">
         {/* Invitation Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -330,13 +286,17 @@ export default function WeddingPage({
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusDeparture}:
                       </span>
-                      <span className="text-gray-900 font-bold text-lg">16:30</span>
+                      <span className="text-gray-900 font-bold text-lg">
+                        16:30
+                      </span>
                     </div>
                     <div className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm">
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusReturn}:
                       </span>
-                      <span className="text-gray-900 font-bold text-lg">04:00</span>
+                      <span className="text-gray-900 font-bold text-lg">
+                        04:00
+                      </span>
                     </div>
                     <a
                       href={VENUE.transportBusLink}

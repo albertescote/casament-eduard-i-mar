@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { Locale, locales } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import { Nav } from "../_components/Nav";
 import { Footer } from "../_components/Footer";
-import { getDictionary } from "@/i18n/getDictionary";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Eduard & Mar · Wedding",
@@ -28,24 +17,32 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
-  const t = getDictionary((locale as Locale) ?? "ca");
+  // Get current pathname to check if we're on the enter page
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "";
+  const isEnterPage = pathname.endsWith("/enter");
+
   return (
     <>
-      <header className="w-full border-b border-gray-100 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-        <Nav />
-      </header>
+      {!isEnterPage && (
+        <header className="w-full border-b border-gray-100 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+          <Nav />
+        </header>
+      )}
 
-      <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+      <main
+        className={
+          isEnterPage ? "" : "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8"
+        }
+      >
         {children}
       </main>
 
-      <Footer text={t.footer.text} followJourney={t.footer.followJourney} />
+      {!isEnterPage && <Footer />}
     </>
   );
 }

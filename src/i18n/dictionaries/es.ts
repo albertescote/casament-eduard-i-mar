@@ -26,6 +26,9 @@ export const es = {
       minutes: "Minutos",
       seconds: "Segundos",
     },
+    ctaTitle: "No te pierdas ningún detalle",
+    ctaDescription: "Descubre toda la información sobre el gran día",
+    ctaButton: "Ver detalles",
   },
   wedding: {
     scheduleTitle: "Horario del Día",
@@ -53,6 +56,8 @@ export const es = {
   rsvp: {
     title: "Confirmación de asistencia",
     lead: "Confirma asistencia y necesidades para que podamos organizarlo todo.",
+    warningBanner:
+      "Atención: La confirmación es individual. Cada invitado debe rellenar el formulario por separado.",
     success: "¡Gracias! Hemos registrado tu respuesta 🎉",
     fullName: "Nombre y apellidos",
     fullNamePlaceholder: "Escribe tu nombre completo",
@@ -61,7 +66,7 @@ export const es = {
     no: "No",
     busQuestion: "¿Necesitas autobus?",
     busHelper: "Salida y regreso desde el punto acordado.",
-    dietLabel: "Preferencias alimentarias",
+    dietLabel: "Menú especial",
     vegetarian: "Vegetariano",
     vegan: "Vegano",
     celiac: "Celíaco",
@@ -76,10 +81,6 @@ export const es = {
     passwordPlaceholder: "Contraseña",
     submit: "Confirmar",
     invalidPassword: "Contraseña incorrecta",
-  },
-  footer: {
-    text: "Hecho con amor para nuestro gran día: ven a celebrarlo con nosotros y mantente al día.",
-    followJourney: "Síguenos en nuestro viaje juntos",
   },
   faqs: {
     title: "Preguntas Frecuentes",
@@ -151,7 +152,7 @@ export const es = {
     tableFullName: "Nombre completo",
     tableAttending: "Asiste",
     tableBus: "Bus",
-    tableDietary: "Alimentación",
+    tableDietary: "Menú especial",
     tableAllergies: "Alergias",
     yes: "Sí",
     no: "No",

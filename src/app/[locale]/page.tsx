@@ -190,7 +190,7 @@ export default function Home({
         </div>
       </motion.section>
 
-      {/* Image Gallery Grid */}
+      {/* Image Gallery Grid - Collage of Couple & Venue */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -198,54 +198,120 @@ export default function Home({
         variants={staggerContainer}
         className="py-20 px-4"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {/* Large Image Card */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {/* Row 1: Couple photo spanning 2 cols + 2 venue photos */}
           <motion.div
             variants={scaleIn}
-            className="md:col-span-2 relative h-96 rounded-3xl overflow-hidden group"
+            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
           >
             <Image
               src="/image-1.jpeg"
-              alt="Wedding venue"
+              alt="Eduard & Mar"
               fill
-              sizes="(min-width: 768px) 100vw, 50vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 text-white">
-              <h3 className="text-3xl font-bold mb-2">La Celebració</h3>
-              <p className="text-lg text-white/90">Un dia inoblidable</p>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </motion.div>
 
-          {/* Medium Image Card */}
           <motion.div
             variants={scaleIn}
-            className="relative h-80 rounded-3xl overflow-hidden group"
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/castell-tallat-capilla.jpg"
+              alt="Castell Tallat - Capilla"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/castell-tallat-exterior.jpg"
+              alt="Castell Tallat - Exterior"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 2: Three venue photos + 1 couple photo */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/castell-tallat-naturaleza.jpg"
+              alt="Castell Tallat - Naturaleza"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
           >
             <Image
               src="/image-2.jpeg"
-              alt="Wedding details"
+              alt="Eduard & Mar"
               fill
-              sizes="(min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 768px) 25vw, 50vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
 
-          {/* Medium Image Card */}
           <motion.div
             variants={scaleIn}
-            className="relative h-80 rounded-3xl overflow-hidden group"
+            className="relative h-64 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/image-3.jpeg"
-              alt="Wedding invitation"
+              src="/castell-tallat-elegantes.jpg"
+              alt="Castell Tallat - Elegantes"
               fill
-              sizes="(min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 768px) 25vw, 50vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/castell-tallat-unico.jpg"
+              alt="Castell Tallat - Único"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 3: Large spanning couple photo */}
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 md:col-span-4 relative h-72 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/image-3.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           </motion.div>
         </div>
       </motion.section>
@@ -258,7 +324,7 @@ export default function Home({
         variants={fadeIn}
         className="py-20 px-4"
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -278,16 +344,16 @@ export default function Home({
             </div>
             <div className="relative z-10 py-20 px-8">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                No et perdis cap detall
+                {t.home.ctaTitle}
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Descobreix tota la informació sobre el gran dia
+                {t.home.ctaDescription}
               </p>
               <Link
                 href={`/${locale}/wedding`}
                 className="inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl"
               >
-                Veure detalls
+                {t.home.ctaButton}
                 <svg
                   className="ml-2 w-5 h-5"
                   fill="none"
