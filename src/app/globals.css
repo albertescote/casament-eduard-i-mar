@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F5EFE6; /* Warmer ecru/beige */
   --foreground: #171717;
   --accent-pink-50: #fff1f5;
   --accent-pink-100: #ffe4ec;
 
-  /* New neutral palette with subtle pastel accents */
+  /* Warm and soft color palette */
   --color-primary: #1f2937; /* gray-800 */
   --color-secondary: #4b5563; /* gray-600 */
-  --color-accent-subtle: #e0f2f1; /* very soft teal */
-  --color-accent-subtle-2: #e3f2fd; /* very soft blue */
+  --color-beige: #F5F3EE; /* Light beige for cards */
+  --color-ecru: #F5EFE6; /* Main background - warmer ecru */
+  --color-terracotta: #D4A89F; /* Soft terracotta/dusty rose */
+  --color-terracotta-dark: #C59890; /* Darker terracotta for hover */
+  --color-warm-accent: #E8DED3; /* Warm beige accent */
 }
 
 @theme inline {

@@ -145,7 +145,7 @@ export function RsvpForm({ t }: { t: Dict }) {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
-                  Confirmació rebuda!
+                  {t.rsvp.submited}
                 </h3>
                 <p className="text-sm text-gray-700">{t.rsvp.success}</p>
               </div>
@@ -156,7 +156,7 @@ export function RsvpForm({ t }: { t: Dict }) {
             key="form"
             variants={fadeInUp}
             onSubmit={handleSubmit}
-            className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-gray-100 bg-white/80 backdrop-blur-sm p-8 shadow-xl"
+            className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-[#E8DED3] bg-white/90 backdrop-blur-sm p-8 shadow-xl"
           >
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 via-transparent to-gray-50/30 rounded-3xl pointer-events-none" />
@@ -210,7 +210,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder={t.rsvp.fullNamePlaceholder ?? ""}
-                    className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-gray-400 focus:ring-4 focus:ring-gray-100 hover:border-gray-300"
+                    className="w-full rounded-xl border-2 border-[#E8DED3] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#D4A89F] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#D4A89F]"
                   />
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <svg
@@ -243,8 +243,8 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         attending === value
-                          ? "border-gray-400 bg-gray-50 shadow-md"
-                          : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                          ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-md"
+                          : "border-[#E8DED3] bg-white hover:border-[#D4A89F] hover:shadow-sm"
                       }`}
                     >
                       <input
@@ -297,8 +297,8 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         bus === value
-                          ? "border-gray-400 bg-gray-50 shadow-md"
-                          : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                          ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-md"
+                          : "border-[#E8DED3] bg-white hover:border-[#D4A89F] hover:shadow-sm"
                       }`}
                     >
                       <input
@@ -384,8 +384,8 @@ export function RsvpForm({ t }: { t: Dict }) {
                       whileTap={{ scale: 0.98 }}
                       className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm font-medium cursor-pointer transition-all ${
                         item.value
-                          ? "border-gray-400 bg-gray-50 shadow-sm"
-                          : "border-gray-200 bg-white hover:border-gray-300"
+                          ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-sm"
+                          : "border-[#E8DED3] bg-white hover:border-[#D4A89F]"
                       }`}
                     >
                       <input
@@ -445,7 +445,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                   onChange={(e) => setAllergies(e.target.value)}
                   rows={4}
                   placeholder={t.rsvp.allergiesPlaceholder ?? ""}
-                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-gray-400 focus:ring-4 focus:ring-gray-100 hover:border-gray-300 resize-none"
+                  className="w-full rounded-xl border-2 border-[#E8DED3] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#D4A89F] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#D4A89F] resize-none"
                 />
                 <p className="mt-2 text-xs text-gray-500 flex items-start gap-2">
                   <svg
@@ -472,7 +472,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                   disabled={disableSubmit}
                   whileHover={!disableSubmit ? { scale: 1.02 } : {}}
                   whileTap={!disableSubmit ? { scale: 0.98 } : {}}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] text-white px-6 py-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl hover:bg-[#C59890] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {submitting ? (
                     <>

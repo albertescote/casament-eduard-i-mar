@@ -134,9 +134,9 @@ export default function AdminPage({
           transition={{ duration: 0.6 }}
           className="relative z-10 w-full max-w-md mx-auto"
         >
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200 p-8 sm:p-10 space-y-6">
+          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-[#E8DED3] p-8 sm:p-10 space-y-6">
             {/* Icon */}
-            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-900 shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-[#D4A89F] shadow-lg">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -169,7 +169,7 @@ export default function AdminPage({
                   onChange={(e) => setKey(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && !loading && key && login()}
                   placeholder={t.admin.masterKeyPlaceholder}
-                  className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-gray-400 focus:ring-4 focus:ring-gray-100"
+                  className="w-full rounded-xl border-2 border-[#E8DED3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#D4A89F] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#D4A89F]"
                 />
               </div>
 
@@ -178,7 +178,7 @@ export default function AdminPage({
                 whileTap={{ scale: 0.98 }}
                 onClick={login}
                 disabled={loading || !key}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-[#C59890] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <>
@@ -225,11 +225,11 @@ export default function AdminPage({
         className="space-y-6"
       >
         {/* Header Card */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-gray-200 p-6">
+        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-[#E8DED3] p-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shadow-md">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#D4A89F] shadow-md">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
@@ -263,7 +263,7 @@ export default function AdminPage({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={exportCsv}
-              className="inline-flex items-center gap-2 rounded-xl bg-gray-900 text-white px-4 py-2.5 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#D4A89F] text-white px-4 py-2.5 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-[#C59890]"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -278,7 +278,7 @@ export default function AdminPage({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-gray-200 overflow-hidden"
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-[#E8DED3] overflow-hidden"
         >
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">

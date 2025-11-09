@@ -9,11 +9,11 @@ export function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden bg-gray-50 mt-20"
+      className="relative overflow-hidden bg-[#F5EFE6] mt-20"
     >
       {/* Gradient Divider */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E8DED3] to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
@@ -27,7 +27,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="group flex items-center justify-center w-9 h-9 rounded-full bg-gray-900 shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-800 hover:scale-110"
+            className="group flex items-center justify-center w-9 h-9 rounded-full bg-[#D4A89F] shadow-md transition-all duration-300 hover:shadow-lg hover:bg-[#C59890] hover:scale-110"
           >
             <svg
               className="h-4 w-4 text-white"

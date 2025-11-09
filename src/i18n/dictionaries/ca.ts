@@ -4,10 +4,10 @@ export const ca = {
     wedding: "El casament",
     rsvp: "Confirmar assistència",
     info: "Informació d'interès",
-    brand: "Eduard & Mar",
+    brand: "Mar & Eduard",
   },
   home: {
-    heroTitle: "Eduard & Mar",
+    heroTitle: "Mar & Eduard",
     heroLead:
       "Ens casem! Explora els detalls del dia, consulta l'horari i confirma si podràs venir.",
     ctaSchedule: "Veure horari",
@@ -58,6 +58,7 @@ export const ca = {
     warningBanner:
       "Atenció: La confirmació és individual. Cada convidat ha d'emplenar el formulari per separat.",
     success: "Gràcies! Hem registrat la teva resposta 🎉",
+    submited: "Confirmació enviada!",
     fullName: "Nom i cognoms",
     fullNamePlaceholder: "Escriu el teu nom complet",
     willAttend: "Vindràs al casament?",

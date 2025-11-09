@@ -57,7 +57,7 @@ export default function WeddingPage({
   }
 
   return (
-    <section className="relative min-h-screen bg-white">
+    <section className="relative min-h-screen">
       {/* Content */}
       <div className="relative w-full">
         {/* Invitation Image */}
@@ -65,24 +65,22 @@ export default function WeddingPage({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="w-full"
+          className="w-full px-4 sm:px-6"
         >
-          <div
-            className="relative w-full mx-auto max-w-3xl"
-            style={{ aspectRatio: "1 / 1.4142" }}
-          >
+          <div className="relative w-full mx-auto max-w-3xl overflow-hidden rounded-3xl shadow-2xl">
             <Image
               src="/invitation-1.png"
               alt={t.wedding.scheduleTitle}
-              fill
+              width={1000}
+              height={1414}
               priority
-              className="object-contain"
+              className="w-full h-auto"
               sizes="(max-width: 768px) 100vw, 768px"
             />
           </div>
         </motion.div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
           {/* Venue Section */}
           <motion.section
             initial="hidden"
@@ -93,7 +91,7 @@ export default function WeddingPage({
             className="mb-20"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-lg mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A89F] shadow-lg mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -124,7 +122,7 @@ export default function WeddingPage({
 
             <div className="grid gap-8 lg:grid-cols-2 items-start">
               <motion.div variants={fadeInUp} className="space-y-6">
-                <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-gray-200 bg-white">
+                <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-[#E8DED3] bg-white">
                   <iframe
                     title={`${VENUE.name} map`}
                     src={VENUE.mapsEmbedUrl}
@@ -135,8 +133,8 @@ export default function WeddingPage({
                   />
                 </div>
 
-                <div className="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-xl">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100/50 rounded-full blur-2xl" />
+                <div className="relative overflow-hidden rounded-3xl border-2 border-[#E8DED3] bg-white p-8 shadow-xl">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#E8D5D0]/20 rounded-full blur-2xl" />
                   <div className="relative">
                     <h4 className="text-2xl font-bold text-gray-800 mb-4">
                       {VENUE.name}
@@ -179,7 +177,7 @@ export default function WeddingPage({
                       href={VENUE.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:bg-gray-800"
+                      className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:bg-[#C59890]"
                     >
                       <svg
                         className="w-5 h-5"
@@ -202,7 +200,7 @@ export default function WeddingPage({
 
               <motion.div
                 variants={fadeInUp}
-                className="relative h-[500px] lg:h-full min-h-[400px] overflow-hidden rounded-3xl shadow-xl border-2 border-gray-200"
+                className="relative h-[500px] lg:h-full min-h-[400px] overflow-hidden rounded-3xl shadow-xl border-2 border-[#E8DED3]"
               >
                 <Image
                   src={VENUE.imageSrc}
@@ -225,7 +223,7 @@ export default function WeddingPage({
             className="mb-12"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-lg mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A89F] shadow-lg mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -252,12 +250,12 @@ export default function WeddingPage({
               {/* Bus Card */}
               <motion.div
                 variants={fadeInUp}
-                className="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-xl"
+                className="relative overflow-hidden rounded-3xl border-2 border-[#E8DED3] bg-white p-8 shadow-xl"
               >
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gray-100/50 rounded-full blur-3xl" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-[#E8D5D0]/20 rounded-full blur-3xl" />
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-gray-900 rounded-2xl shadow-lg">
+                    <div className="p-3 bg-[#D4A89F] rounded-2xl shadow-lg">
                       <svg
                         className="w-7 h-7 text-white"
                         fill="none"
@@ -282,19 +280,19 @@ export default function WeddingPage({
                   </p>
 
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border-2 border-blue-200 shadow-sm">
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusDeparture}:
                       </span>
-                      <span className="text-gray-900 font-bold text-lg">
+                      <span className="text-blue-700 font-bold text-lg">
                         16:30
                       </span>
                     </div>
-                    <div className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-200 shadow-sm">
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusReturn}:
                       </span>
-                      <span className="text-gray-900 font-bold text-lg">
+                      <span className="text-amber-700 font-bold text-lg">
                         04:00
                       </span>
                     </div>
@@ -340,12 +338,12 @@ export default function WeddingPage({
               {/* Parking Card */}
               <motion.div
                 variants={fadeInUp}
-                className="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-xl"
+                className="relative overflow-hidden rounded-3xl border-2 border-[#E8DED3] bg-white p-8 shadow-xl"
               >
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gray-100/50 rounded-full blur-3xl" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-[#E8D5D0]/20 rounded-full blur-3xl" />
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-gray-900 rounded-2xl shadow-lg">
+                    <div className="p-3 bg-[#D4A89F] rounded-2xl shadow-lg">
                       <svg
                         className="w-7 h-7 text-white"
                         fill="none"
@@ -381,10 +379,10 @@ export default function WeddingPage({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm"
+                        className="flex items-start gap-3 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border-2 border-emerald-200 shadow-sm"
                       >
                         <svg
-                          className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0"
+                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-emerald-600"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >

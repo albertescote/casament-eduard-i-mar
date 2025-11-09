@@ -60,10 +60,10 @@ export function PasswordBlockerScreen({
       >
         <form
           onSubmit={onSubmit}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200 p-8 sm:p-10 space-y-6"
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-[#E8DED3] p-8 sm:p-10 space-y-6"
         >
           {/* Icon */}
-          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-900 shadow-lg">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-[#D4A89F] shadow-lg">
             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M11.646 20.86a1 1 0 0 0 .708 0C16.7 19.095 21 15.93 21 11.25 21 8.35 18.9 6 16.25 6A5.3 5.3 0 0 0 12 8.12 5.3 5.3 0 0 0 7.75 6C5.1 6 3 8.35 3 11.25c0 4.68 4.3 7.845 8.646 9.61Z" />
             </svg>
@@ -93,7 +93,7 @@ export function PasswordBlockerScreen({
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t.enter.passwordPlaceholder}
                 autoFocus
-                className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-gray-400 focus:ring-4 focus:ring-gray-100"
+                className="w-full rounded-xl border-2 border-[#E8DED3] bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-[#D4A89F] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#D4A89F]"
               />
               <button
                 type="button"
@@ -130,7 +130,7 @@ export function PasswordBlockerScreen({
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading || !password}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-[#C59890] disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>

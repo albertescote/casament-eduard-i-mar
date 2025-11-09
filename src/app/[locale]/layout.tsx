@@ -29,7 +29,7 @@ export default async function LocaleLayout({
   return (
     <>
       {!isEnterPage && (
-        <header className="w-full border-b border-gray-100 sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <header className="w-full border-b border-[#E8DED3] sticky top-0 z-50 bg-[#FAFAF8]/95 backdrop-blur-md shadow-sm">
           <Nav />
         </header>
       )}

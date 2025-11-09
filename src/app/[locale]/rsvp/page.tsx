@@ -13,12 +13,10 @@ export default function RsvpPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const [locale, setLocale] = useState<string>("ca");
   const [t, setT] = useState<typeof ca | typeof es | null>(null);
 
   useEffect(() => {
     params.then(({ locale: l }) => {
-      setLocale(l);
       setT(getDictionary((l as Locale) ?? "ca"));
     });
   }, [params]);
@@ -86,7 +84,7 @@ export default function RsvpPage({
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8 text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-lg mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A89F] shadow-lg mb-4">
               <svg
                 className="w-8 h-8 text-white"
                 fill="none"

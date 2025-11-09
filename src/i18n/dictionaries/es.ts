@@ -4,10 +4,10 @@ export const es = {
     wedding: "La boda",
     rsvp: "Confirmar asistencia",
     info: "Información de interés",
-    brand: "Eduard & Mar",
+    brand: "Mar & Eduard",
   },
   home: {
-    heroTitle: "Eduard & Mar",
+    heroTitle: "Mar & Eduard",
     heroLead:
       "¡Nos casamos! Explora los detalles del día, consulta el horario y confirma si podrás venir.",
     ctaSchedule: "Ver horario",
@@ -59,6 +59,7 @@ export const es = {
     warningBanner:
       "Atención: La confirmación es individual. Cada invitado debe rellenar el formulario por separado.",
     success: "¡Gracias! Hemos registrado tu respuesta 🎉",
+    submited: "¡Confirmación enviada!",
     fullName: "Nombre y apellidos",
     fullNamePlaceholder: "Escribe tu nombre completo",
     willAttend: "¿Vendràs a la boda?",

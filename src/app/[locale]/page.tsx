@@ -95,7 +95,7 @@ export default function Home({
           className="relative z-10 text-center px-6 max-w-5xl mx-auto"
         >
           <motion.div variants={fadeInUp} className="mb-6">
-            <div className="inline-block px-6 py-2 rounded-full bg-white/90 backdrop-blur-sm mb-6">
+            <div className="inline-block px-6 py-2 rounded-full bg-[#E8D5D0]/95 backdrop-blur-sm mb-6">
               <p className="text-sm font-medium text-gray-900">
                 {t.home.datePlace}
               </p>
@@ -122,7 +122,7 @@ export default function Home({
           >
             <Link
               href={`/${locale}/wedding`}
-              className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
             >
               {t.home.ctaSchedule}
               <svg
@@ -141,7 +141,7 @@ export default function Home({
             </Link>
             <Link
               href={`/${locale}/rsvp`}
-              className="group inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
             >
               {t.home.ctaRsvp}
               <svg
@@ -351,7 +351,7 @@ export default function Home({
               </p>
               <Link
                 href={`/${locale}/wedding`}
-                className="inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 {t.home.ctaButton}
                 <svg
