@@ -14,7 +14,7 @@ const VENUE = {
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.3420054314406!2d1.2970546761466448!3d41.388378495933516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a405007b32f28f%3A0x74127c3976ff4b97!2sCastell%20Tallat!5e0!3m2!1sca!2snl!4v1760699017192!5m2!1sca!2snl",
   mapsLink: "https://maps.app.goo.gl/K7YNUUc7YyM9GKZF8",
-  imageSrc: "/castelltallat/venue.jpg",
+  imageSrc: "/castelltallat/venue-3.jpg",
   imageAlt: "Castell Tallat exterior",
   transportBusLink: "https://maps.app.goo.gl/9S8svSzJVLrXrnfx5",
 };
@@ -280,19 +280,19 @@ export default function WeddingPage({
                   </p>
 
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border-2 border-blue-200 shadow-sm">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50/50 to-sky-50/50 rounded-2xl border-2 border-blue-100 shadow-sm">
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusDeparture}:
                       </span>
-                      <span className="text-blue-700 font-bold text-lg">
+                      <span className="text-blue-500 font-bold text-lg">
                         16:30
                       </span>
                     </div>
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-200 shadow-sm">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50/50 to-rose-50/50 rounded-2xl border-2 border-orange-100 shadow-sm">
                       <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusReturn}:
                       </span>
-                      <span className="text-amber-700 font-bold text-lg">
+                      <span className="text-yellow-600 font-bold text-lg">
                         04:00
                       </span>
                     </div>
@@ -327,8 +327,8 @@ export default function WeddingPage({
                     </a>
                   </div>
 
-                  <div className="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl">
-                    <p className="text-sm text-amber-900 font-medium">
+                  <div className="p-4 bg-yellow-50/50 border-l-4 border-yellow-200 rounded-r-2xl">
+                    <p className="text-sm text-yellow-800 font-medium">
                       {t.wedding.transportBusConfirm}
                     </p>
                   </div>
@@ -379,10 +379,10 @@ export default function WeddingPage({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border-2 border-emerald-200 shadow-sm"
+                        className="flex items-start gap-3 p-4 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-2xl border-2 border-green-100 shadow-sm"
                       >
                         <svg
-                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-emerald-600"
+                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-green-600"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >

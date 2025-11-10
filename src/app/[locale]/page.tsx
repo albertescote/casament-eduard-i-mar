@@ -78,7 +78,7 @@ export default function Home({
         {/* Background Image with Overlay */}
         <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9]">
           <Image
-            src="/designs/invitation-chatgpt.png"
+            src="/designs/invitation-colorful.jpg"
             alt="Wedding"
             fill
             sizes="100vw"
@@ -189,332 +189,6 @@ export default function Home({
             targetDate={new Date("2026-06-12T17:00:00")}
             labels={t.home.countdown}
           />
-        </div>
-      </motion.section>
-
-      {/* Image Gallery Grid - Collage of Couple */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={staggerContainer}
-        className="py-20 px-4"
-      >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-          {/* Row 1: Large photo + 2 regular */}
-          <motion.div
-            variants={scaleIn}
-            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-15.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-7.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-22.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 2: 4 regular photos */}
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-3.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-18.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-11.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-9.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 3: 2 regular + Large photo */}
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-5.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-20.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="col-span-2 relative h-64 md:h-96 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-1.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 4: Full width photo */}
-          <motion.div
-            variants={scaleIn}
-            className="col-span-2 md:col-span-4 relative h-72 md:h-96 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-14.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="100vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 5: 4 regular photos */}
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-8.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-16.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-2.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-19.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 6: Large photo + 2 regular */}
-          <motion.div
-            variants={scaleIn}
-            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-6.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-13.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-21.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 7: 4 regular photos */}
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-10.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-4.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-17.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/couple/couple-12.jpeg"
-              alt="Eduard & Mar"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
         </div>
       </motion.section>
 
@@ -903,6 +577,332 @@ export default function Home({
               </motion.div>
             </div>
           </div>
+        </div>
+      </motion.section>
+
+      {/* Image Gallery Grid - Collage of Couple */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+        className="py-20 px-4"
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {/* Row 1: Large photo + 2 regular */}
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-4.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-7.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-14.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 2: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-3.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-21.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-11.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-9.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 3: 2 regular + Large photo */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-5.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-20.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-1.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 4: Full width photo */}
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 md:col-span-4 relative h-72 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-22.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 5: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-8.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-18.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-2.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-19.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 6: Large photo + 2 regular */}
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-6.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-13.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-10.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 7: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-16.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-15.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-17.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-12.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
         </div>
       </motion.section>
 
