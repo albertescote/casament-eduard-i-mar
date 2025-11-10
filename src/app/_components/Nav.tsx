@@ -107,7 +107,7 @@ export function Nav() {
       <div className="flex h-16 items-center justify-between">
         {/* Logo/Brand */}
         <Link href={`/${locale}`} className="group flex items-center gap-2">
-          <div className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-[#C46B64] shadow-md group-hover:shadow-lg transition-shadow duration-300">
+          <div className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-[#898651] shadow-md group-hover:shadow-lg transition-shadow duration-300">
             <svg
               className="w-5 h-5 text-white"
               fill="currentColor"
@@ -132,7 +132,7 @@ export function Nav() {
                 className={
                   "group flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 " +
                   (active
-                    ? "bg-[#C46B64] text-white shadow-md"
+                    ? "bg-[#898651] text-white shadow-md"
                     : "hover:bg-gray-100 text-gray-700 hover:text-gray-900")
                 }
               >
@@ -167,7 +167,7 @@ export function Nav() {
                   className={
                     "p-2 rounded-full transition-all duration-300 " +
                     (active
-                      ? "bg-[#C46B64] text-white shadow-md"
+                      ? "bg-[#898651] text-white shadow-md"
                       : "text-gray-600 hover:bg-gray-100 hover:text-gray-900")
                   }
                   title={link.label}

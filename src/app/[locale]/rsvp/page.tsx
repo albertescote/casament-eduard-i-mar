@@ -87,7 +87,7 @@ export default function RsvpPage({
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8 text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C46B64] shadow-lg mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#898651] shadow-lg mb-4">
               <svg
                 className="w-8 h-8 text-white"
                 fill="none"

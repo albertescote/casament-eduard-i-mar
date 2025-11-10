@@ -60,10 +60,10 @@ export function PasswordBlockerScreen({
       >
         <form
           onSubmit={onSubmit}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-[#E8DED3] p-8 sm:p-10 space-y-6"
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-[#D1CDB6] p-8 sm:p-10 space-y-6"
         >
           {/* Icon */}
-          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-[#C46B64] shadow-lg">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-[#898651] shadow-lg">
             <svg
               className="w-8 h-8 text-white"
               fill="currentColor"
@@ -97,7 +97,7 @@ export function PasswordBlockerScreen({
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t.enter.passwordPlaceholder}
                 autoFocus
-                className="w-full rounded-xl border-2 border-[#E8DED3] bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-[#C46B64] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#C46B64]"
+                className="w-full rounded-xl border-2 border-[#D1CDB6] bg-white px-4 py-3 pr-12 text-sm outline-none transition-all duration-300 focus:border-[#898651] focus:ring-4 focus:ring-[#E8D5D0]/30 hover:border-[#898651]"
               />
               <button
                 type="button"
@@ -134,7 +134,7 @@ export function PasswordBlockerScreen({
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading || !password}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#C46B64] text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-[#C59890] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#898651] text-white px-6 py-3 text-sm font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-[#B2AE8B] disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>

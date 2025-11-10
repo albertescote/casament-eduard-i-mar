@@ -38,7 +38,7 @@ export function LanguageSwitcher() {
             className={
               "relative px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 " +
               (isActive
-                ? "bg-[#C46B64] text-white shadow-md"
+                ? "bg-[#898651] text-white shadow-md"
                 : "text-gray-600 hover:text-gray-900 hover:bg-white/50")
             }
           >

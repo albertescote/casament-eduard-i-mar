@@ -80,7 +80,7 @@ export default function Faqs({
             </code>
             <CopyButton text="ES00 0000 0000 0000 0000 0000" locale={locale} />
           </div>
-          <div className="flex items-center gap-2 p-3 bg-[#E8D5D0]/30 rounded-xl border border-[#C46B64]">
+          <div className="flex items-center gap-2 p-3 bg-[#ECE9DC]/30 rounded-xl border border-[#898651]">
             <svg
               className="w-5 h-5 text-gray-600 flex-shrink-0"
               fill="currentColor"
@@ -257,7 +257,7 @@ export default function Faqs({
         className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
       >
         <motion.div variants={fadeInUp} className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C46B64] shadow-lg mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#898651] shadow-lg mb-4">
             <svg
               className="w-8 h-8 text-white"
               fill="none"
@@ -275,7 +275,7 @@ export default function Faqs({
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-3">
             {t.faqs.title}
           </h1>
-          <div className="w-24 h-1 bg-[#C46B64] mx-auto rounded-full shadow-sm"></div>
+          <div className="w-24 h-1 bg-[#898651] mx-auto rounded-full shadow-sm"></div>
         </motion.div>
 
         <motion.div variants={fadeInUp} className="grid gap-4">
