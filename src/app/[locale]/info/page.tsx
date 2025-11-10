@@ -203,7 +203,7 @@ export default function Faqs({
   ];
 
   return (
-    <section className="relative min-h-screen py-16">
+    <section className="relative min-h-screen py-4 sm:py-16">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

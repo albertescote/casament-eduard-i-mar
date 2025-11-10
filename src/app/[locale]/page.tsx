@@ -88,7 +88,6 @@ export default function Home({
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10" />
-            <div className="absolute inset-0 bg-black/30" />
           </div>
         </div>
 
@@ -108,29 +107,29 @@ export default function Home({
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 tracking-tight drop-shadow-2xl"
+              className="text-2xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2 sm:mb-6 tracking-tight drop-shadow-2xl"
             >
               {t.home.heroTitle}
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-10 max-w-xl sm:max-w-2xl mx-auto drop-shadow-lg px-4 sm:px-0"
+              className="text-xs sm:text-xl md:text-2xl text-white/90 mb-3 sm:mb-10 max-w-xl sm:max-w-2xl mx-auto drop-shadow-lg px-4 sm:px-0"
             >
               {t.home.heroLead}
             </motion.p>
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-1.5 sm:gap-4 justify-center items-center"
             >
               <Link
                 href={`/${locale}/wedding`}
-                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
               >
                 {t.home.ctaSchedule}
                 <svg
-                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+                  className="ml-1.5 w-3 h-3 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -145,11 +144,11 @@ export default function Home({
               </Link>
               <Link
                 href={`/${locale}/rsvp`}
-                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
+                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
               >
                 {t.home.ctaRsvp}
                 <svg
-                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+                  className="ml-1.5 w-3 h-3 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

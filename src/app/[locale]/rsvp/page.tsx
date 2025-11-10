@@ -26,7 +26,7 @@ export default function RsvpPage({
   }
 
   return (
-    <section className="relative min-h-[80dvh] py-12">
+    <section className="relative min-h-[80dvh] py-4 sm:py-12">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
