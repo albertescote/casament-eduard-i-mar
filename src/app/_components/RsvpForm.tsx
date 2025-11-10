@@ -124,11 +124,11 @@ export function RsvpForm({ t }: { t: Dict }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="relative overflow-hidden rounded-2xl border-2 border-emerald-100 bg-white p-8 shadow-lg"
+            className="relative overflow-hidden rounded-2xl border-2 border-[#898651] bg-white p-8 shadow-lg"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/50 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#7D8A4F]-50/50 rounded-full blur-2xl" />
             <div className="relative flex items-start gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-600 shadow-lg flex-shrink-0">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#7D8A4F] shadow-lg flex-shrink-0">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -259,7 +259,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
                           attending === value
-                            ? "border-gray-900 bg-gray-900"
+                            ? "border-[#7D8A4F] bg-[#7D8A4F]"
                             : "border-gray-300"
                         }`}
                       >
@@ -314,7 +314,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded-full border-2 transition-all ${
                           bus === value
-                            ? "border-gray-900 bg-gray-900"
+                            ? "border-[#7D8A4F] bg-[#7D8A4F]"
                             : "border-gray-300"
                         }`}
                       >
@@ -400,7 +400,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       <div
                         className={`flex items-center justify-center w-5 h-5 rounded border-2 transition-all ${
                           item.value
-                            ? "border-gray-900 bg-gray-900"
+                            ? "border-[#7D8A4F] bg-[#7D8A4F]"
                             : "border-gray-300 bg-white"
                         }`}
                       >
