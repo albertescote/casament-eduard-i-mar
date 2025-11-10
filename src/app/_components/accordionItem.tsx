@@ -27,7 +27,7 @@ export function AccordionItem({
         className="w-full flex items-center gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded-2xl"
       >
         <div
-          className={`p-3 rounded-xl transition-colors ${open ? "bg-[#D4A89F] text-white" : "bg-stone-100 text-stone-600"}`}
+          className={`p-3 rounded-xl transition-colors ${open ? "bg-[#C46B64] text-white" : "bg-stone-100 text-stone-600"}`}
         >
           {icon}
         </div>

@@ -27,7 +27,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="group flex items-center justify-center w-9 h-9 rounded-full bg-[#D4A89F] shadow-md transition-all duration-300 hover:shadow-lg hover:bg-[#C59890] hover:scale-110"
+            className="group flex items-center justify-center w-9 h-9 rounded-full bg-[#C46B64] shadow-md transition-all duration-300 hover:shadow-lg hover:bg-[#C59890] hover:scale-110"
           >
             <svg
               className="h-4 w-4 text-white"
@@ -41,7 +41,7 @@ export function Footer() {
 
           {/* Back to Top */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="group flex items-center gap-1.5 text-gray-500 hover:text-gray-900 transition-colors"
           >
             <span>Tornar a dalt</span>
@@ -51,7 +51,12 @@ export function Footer() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
             </svg>
           </button>
         </div>

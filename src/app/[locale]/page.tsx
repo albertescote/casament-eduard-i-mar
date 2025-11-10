@@ -125,7 +125,7 @@ export default function Home({
             >
               <Link
                 href={`/${locale}/wedding`}
-                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                className="group inline-flex items-center justify-center rounded-full bg-[#C46B64] text-white px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
               >
                 {t.home.ctaSchedule}
                 <svg
@@ -222,8 +222,8 @@ export default function Home({
           {/* Timeline Container */}
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D4A89F] via-[#D4A89F] to-[#D4A89F] transform -translate-x-1/2 hidden md:block" />
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D4A89F] via-[#D4A89F] to-[#D4A89F] md:hidden" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C46B64] via-[#C46B64] to-[#C46B64] transform -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C46B64] via-[#C46B64] to-[#C46B64] md:hidden" />
 
             {/* Timeline Items */}
             <div className="space-y-12">
@@ -238,7 +238,7 @@ export default function Home({
                 {/* Left side - Content */}
                 <div className="md:text-right md:pr-12 ml-16 md:ml-0">
                   <div className="inline-block md:float-right">
-                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                       2018
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -252,7 +252,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Right side - Image */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
@@ -276,7 +276,7 @@ export default function Home({
               >
                 {/* Content - First on mobile */}
                 <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
-                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                     2019
                   </span>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -289,7 +289,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Image - Second on mobile */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
@@ -314,7 +314,7 @@ export default function Home({
                 {/* Left side - Content */}
                 <div className="md:text-right md:pr-12 ml-16 md:ml-0">
                   <div className="inline-block md:float-right">
-                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                       2020
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -328,7 +328,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Right side - Image */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
@@ -352,7 +352,7 @@ export default function Home({
               >
                 {/* Content - First on mobile */}
                 <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
-                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                     2021
                   </span>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -365,7 +365,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Image - Second on mobile */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
@@ -390,7 +390,7 @@ export default function Home({
                 {/* Left side - Content */}
                 <div className="md:text-right md:pr-12 ml-16 md:ml-0">
                   <div className="inline-block md:float-right">
-                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                       2022
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -404,7 +404,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Right side - Image */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
@@ -428,7 +428,7 @@ export default function Home({
               >
                 {/* Content - First on mobile */}
                 <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
-                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                     2023
                   </span>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -441,7 +441,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Image - Second on mobile */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
@@ -466,7 +466,7 @@ export default function Home({
                 {/* Left side - Content */}
                 <div className="md:text-right md:pr-12 ml-16 md:ml-0">
                   <div className="inline-block md:float-right">
-                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                       2024
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -480,7 +480,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Right side - Image */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
@@ -504,7 +504,7 @@ export default function Home({
               >
                 {/* Content - First on mobile */}
                 <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
-                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#C46B64] text-white text-sm font-semibold mb-3">
                     2025
                   </span>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -517,7 +517,7 @@ export default function Home({
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#C46B64] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
 
                 {/* Image - Second on mobile */}
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
@@ -542,7 +542,7 @@ export default function Home({
                 {/* Left side - Content */}
                 <div className="md:text-right md:pr-12 ml-16 md:ml-0">
                   <div className="inline-block md:float-right">
-                    <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-[#D4A89F] to-[#C59890] text-white text-sm font-semibold mb-3 animate-pulse">
+                    <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-[#C46B64] to-[#C59890] text-white text-sm font-semibold mb-3 animate-pulse">
                       2026
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -556,8 +556,8 @@ export default function Home({
                 </div>
 
                 {/* Center dot - Special for wedding */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-6 h-6 bg-gradient-to-br from-[#D4A89F] to-[#C59890] rounded-full border-4 border-white shadow-xl transform md:-translate-x-1/2 -translate-x-3 animate-pulse">
-                  <div className="absolute inset-0 rounded-full bg-[#D4A89F] animate-ping opacity-75" />
+                <div className="absolute left-8 md:left-1/2 top-0 w-6 h-6 bg-gradient-to-br from-[#C46B64] to-[#C59890] rounded-full border-4 border-white shadow-xl transform md:-translate-x-1/2 -translate-x-3 animate-pulse">
+                  <div className="absolute inset-0 rounded-full bg-[#C46B64] animate-ping opacity-75" />
                 </div>
 
                 {/* Right side - Image */}
@@ -943,7 +943,7 @@ export default function Home({
               </p>
               <Link
                 href={`/${locale}/wedding`}
-                className="inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-[#C46B64] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl"
               >
                 {t.home.ctaButton}
                 <svg

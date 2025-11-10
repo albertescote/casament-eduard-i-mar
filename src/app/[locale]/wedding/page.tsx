@@ -91,7 +91,7 @@ export default function WeddingPage({
             className="mb-20"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A89F] shadow-lg mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C46B64] shadow-lg mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -177,7 +177,7 @@ export default function WeddingPage({
                       href={VENUE.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:bg-[#C59890]"
+                      className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#C46B64] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:bg-[#C59890]"
                     >
                       <svg
                         className="w-5 h-5"
@@ -223,7 +223,7 @@ export default function WeddingPage({
             className="mb-12"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D4A89F] shadow-lg mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C46B64] shadow-lg mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -255,7 +255,7 @@ export default function WeddingPage({
                 <div className="absolute top-0 right-0 w-40 h-40 bg-[#E8D5D0]/20 rounded-full blur-3xl" />
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-[#D4A89F] rounded-2xl shadow-lg">
+                    <div className="p-3 bg-[#C46B64] rounded-2xl shadow-lg">
                       <svg
                         className="w-7 h-7 text-white"
                         fill="none"
@@ -343,7 +343,7 @@ export default function WeddingPage({
                 <div className="absolute top-0 right-0 w-40 h-40 bg-[#E8D5D0]/20 rounded-full blur-3xl" />
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-[#D4A89F] rounded-2xl shadow-lg">
+                    <div className="p-3 bg-[#C46B64] rounded-2xl shadow-lg">
                       <svg
                         className="w-7 h-7 text-white"
                         fill="none"
