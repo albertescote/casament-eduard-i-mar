@@ -12,7 +12,7 @@ export const ca = {
       "Ens casem! Explora els detalls del dia, consulta l'horari i confirma si podràs venir.",
     ctaSchedule: "Veure horari",
     ctaRsvp: "Confirmar assistència",
-    datePlace: "12 de juliol de 2026 · Valls, Catalunya",
+    datePlace: "12 de juny de 2026 · Castell Tallat",
     infoTitle: "Informació general",
     infoText: "Lloc, data, transport i allotjament.",
     scheduleTitle: "Horari del dia",
@@ -24,6 +24,46 @@ export const ca = {
       hours: "Hores",
       minutes: "Minuts",
       seconds: "Segons",
+    },
+    timeline: {
+      title: "La Nostra Història",
+      subtitle: "Des del principi fins per sempre",
+      y2018: {
+        title: "Primera Trobada",
+        description: "On tot va començar...",
+      },
+      y2019: {
+        title: "Creixent Junts",
+        description: "Construint la nostra història...",
+      },
+      y2020: {
+        title: "Moment Especial",
+        description: "Un any memorable junts...",
+      },
+      y2021: {
+        title: "Moments Memorables",
+        description: "Creant records junts...",
+      },
+      y2022: {
+        title: "Nova Aventura",
+        description: "Explorant nous horitzons junts...",
+      },
+      y2023: {
+        title: "Junts per Sempre",
+        description: "Enfortint el nostre vincle...",
+      },
+      y2024: {
+        title: "La Petició",
+        description: "El començament del per sempre...",
+      },
+      y2025: {
+        title: "Planejant el Futur",
+        description: "Preparant el gran dia...",
+      },
+      y2026: {
+        title: "El Nostre Gran Dia",
+        description: "Celebrant el nostre amor amb família i amics...",
+      },
     },
     ctaTitle: "No et perdis cap detall",
     ctaDescription: "Descobreix tota la informació sobre el gran dia",

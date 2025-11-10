@@ -39,7 +39,8 @@ export default function RsvpPage({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute top-20 left-10 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
         <motion.div
           animate={{
@@ -52,7 +53,8 @@ export default function RsvpPage({
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
         <motion.div
           animate={{
@@ -65,7 +67,8 @@ export default function RsvpPage({
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
       </div>
 
@@ -116,7 +119,8 @@ export default function RsvpPage({
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-32 right-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm"
+        style={{ willChange: "transform" }}
+        className="absolute top-32 right-20 w-12 h-12 rounded-full bg-white/10 hidden md:block"
       />
       <motion.div
         animate={{
@@ -129,7 +133,8 @@ export default function RsvpPage({
           ease: "easeInOut",
           delay: 1,
         }}
-        className="absolute bottom-40 left-16 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm"
+        style={{ willChange: "transform" }}
+        className="absolute bottom-40 left-16 w-16 h-16 rounded-full bg-white/10 hidden md:block"
       />
     </section>
   );

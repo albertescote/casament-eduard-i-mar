@@ -156,7 +156,7 @@ export function RsvpForm({ t }: { t: Dict }) {
             key="form"
             variants={fadeInUp}
             onSubmit={handleSubmit}
-            className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-[#E8DED3] bg-white/90 backdrop-blur-sm p-8 shadow-xl"
+            className="relative space-y-6 max-w-2xl mx-auto rounded-3xl border-2 border-[#E8DED3] bg-white/90 p-8 shadow-xl"
           >
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 via-transparent to-gray-50/30 rounded-3xl pointer-events-none" />
@@ -241,6 +241,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       key={value}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      style={{ willChange: "auto" }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         attending === value
                           ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-md"
@@ -295,6 +296,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       key={value}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      style={{ willChange: "auto" }}
                       className={`relative flex items-center justify-center gap-3 rounded-xl border-2 px-4 py-4 text-sm font-medium cursor-pointer transition-all ${
                         bus === value
                           ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-md"
@@ -382,6 +384,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                       key={item.key}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      style={{ willChange: "auto" }}
                       className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm font-medium cursor-pointer transition-all ${
                         item.value
                           ? "border-[#D4A89F] bg-[#E8D5D0]/40 shadow-sm"
@@ -472,6 +475,7 @@ export function RsvpForm({ t }: { t: Dict }) {
                   disabled={disableSubmit}
                   whileHover={!disableSubmit ? { scale: 1.02 } : {}}
                   whileTap={!disableSubmit ? { scale: 0.98 } : {}}
+                  style={{ willChange: "auto" }}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A89F] text-white px-6 py-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl hover:bg-[#C59890] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {submitting ? (

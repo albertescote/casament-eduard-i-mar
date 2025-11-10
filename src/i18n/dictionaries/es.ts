@@ -12,7 +12,7 @@ export const es = {
       "¡Nos casamos! Explora los detalles del día, consulta el horario y confirma si podrás venir.",
     ctaSchedule: "Ver horario",
     ctaRsvp: "Confirmar asistencia",
-    datePlace: "12 de julio de 2026 · Valls, Cataluña",
+    datePlace: "12 de junio de 2026 · Castell Tallat",
     infoTitle: "Información general",
     infoText: "Lugar, fecha, transporte y alojamiento.",
     scheduleTitle: "Horario del día",
@@ -25,6 +25,46 @@ export const es = {
       hours: "Horas",
       minutes: "Minutos",
       seconds: "Segundos",
+    },
+    timeline: {
+      title: "Nuestra Historia",
+      subtitle: "Desde el principio hasta para siempre",
+      y2018: {
+        title: "Primer Encuentro",
+        description: "Donde todo comenzó...",
+      },
+      y2019: {
+        title: "Creciendo Juntos",
+        description: "Construyendo nuestra historia...",
+      },
+      y2020: {
+        title: "Momento Especial",
+        description: "Un año memorable juntos...",
+      },
+      y2021: {
+        title: "Momentos Memorables",
+        description: "Creando recuerdos juntos...",
+      },
+      y2022: {
+        title: "Nueva Aventura",
+        description: "Explorando nuevos horizontes juntos...",
+      },
+      y2023: {
+        title: "Juntos para Siempre",
+        description: "Fortaleciendo nuestro vínculo...",
+      },
+      y2024: {
+        title: "La Pedida",
+        description: "El comienzo del para siempre...",
+      },
+      y2025: {
+        title: "Planeando el Futuro",
+        description: "Preparando el gran día...",
+      },
+      y2026: {
+        title: "Nuestro Gran Día",
+        description: "Celebrando nuestro amor con familia y amigos...",
+      },
     },
     ctaTitle: "No te pierdas ningún detalle",
     ctaDescription: "Descubre toda la información sobre el gran día",

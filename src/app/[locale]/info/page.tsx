@@ -216,7 +216,8 @@ export default function Faqs({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-32 left-0 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute top-32 left-0 w-80 h-80 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
         <motion.div
           animate={{
@@ -229,7 +230,8 @@ export default function Faqs({
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-32 right-0 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute bottom-32 right-0 w-96 h-96 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
         <motion.div
           animate={{
@@ -242,7 +244,8 @@ export default function Faqs({
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute top-1/3 right-1/4 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl"
+          style={{ willChange: "transform" }}
+          className="absolute top-1/3 right-1/4 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl hidden md:block"
         />
       </div>
 

@@ -14,7 +14,7 @@ const VENUE = {
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.3420054314406!2d1.2970546761466448!3d41.388378495933516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a405007b32f28f%3A0x74127c3976ff4b97!2sCastell%20Tallat!5e0!3m2!1sca!2snl!4v1760699017192!5m2!1sca!2snl",
   mapsLink: "https://maps.app.goo.gl/K7YNUUc7YyM9GKZF8",
-  imageSrc: "/venue.jpg",
+  imageSrc: "/castelltallat/venue.jpg",
   imageAlt: "Castell Tallat exterior",
   transportBusLink: "https://maps.app.goo.gl/9S8svSzJVLrXrnfx5",
 };
@@ -69,7 +69,7 @@ export default function WeddingPage({
         >
           <div className="relative w-full mx-auto max-w-3xl overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/invitation-1.png"
+              src="/designs/schedule.png"
               alt={t.wedding.scheduleTitle}
               width={1000}
               height={1414}

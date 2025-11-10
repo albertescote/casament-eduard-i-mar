@@ -73,12 +73,12 @@ export default function Home({
       <motion.section
         initial="hidden"
         animate="visible"
-        className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl"
+        className="relative w-full overflow-hidden rounded-3xl"
       >
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
+        <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9]">
           <Image
-            src="/hands.jpeg"
+            src="/designs/invitation-chatgpt.png"
             alt="Wedding"
             fill
             sizes="100vw"
@@ -92,73 +92,75 @@ export default function Home({
         {/* Hero Content */}
         <motion.div
           variants={staggerContainer}
-          className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+          className="absolute inset-0 z-10 flex items-center justify-center text-center px-6"
         >
-          <motion.div variants={fadeInUp} className="mb-6">
-            <div className="inline-block px-6 py-2 rounded-full bg-[#E8D5D0]/95 backdrop-blur-sm mb-6">
-              <p className="text-sm font-medium text-gray-900">
-                {t.home.datePlace}
-              </p>
-            </div>
-          </motion.div>
+          <div className="max-w-5xl mx-auto">
+            <motion.div variants={fadeInUp} className="mb-6">
+              <div className="inline-block px-6 py-2 rounded-full bg-[#E8D5D0]/95 backdrop-blur-sm mb-6">
+                <p className="text-sm font-medium text-gray-900">
+                  {t.home.datePlace}
+                </p>
+              </div>
+            </motion.div>
 
-          <motion.h1
-            variants={fadeInUp}
-            className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl"
-          >
-            {t.home.heroTitle}
-          </motion.h1>
-
-          <motion.p
-            variants={fadeInUp}
-            className="text-xl sm:text-2xl text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-lg"
-          >
-            {t.home.heroLead}
-          </motion.p>
-
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Link
-              href={`/${locale}/wedding`}
-              className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+            <motion.h1
+              variants={fadeInUp}
+              className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl"
             >
-              {t.home.ctaSchedule}
-              <svg
-                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-            <Link
-              href={`/${locale}/rsvp`}
-              className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
+              {t.home.heroTitle}
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-xl sm:text-2xl text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-lg"
             >
-              {t.home.ctaRsvp}
-              <svg
-                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              {t.home.heroLead}
+            </motion.p>
+
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <Link
+                href={`/${locale}/wedding`}
+                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </motion.div>
+                {t.home.ctaSchedule}
+                <svg
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href={`/${locale}/rsvp`}
+                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
+              >
+                {t.home.ctaRsvp}
+                <svg
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
       </motion.section>
 
@@ -184,13 +186,13 @@ export default function Home({
             <p className="text-lg text-gray-600">{t.home.countdown.subtitle}</p>
           </motion.div>
           <Countdown
-            targetDate={new Date("2026-07-12T17:00:00")}
+            targetDate={new Date("2026-06-12T17:00:00")}
             labels={t.home.countdown}
           />
         </div>
       </motion.section>
 
-      {/* Image Gallery Grid - Collage of Couple & Venue */}
+      {/* Image Gallery Grid - Collage of Couple */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -199,32 +201,18 @@ export default function Home({
         className="py-20 px-4"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-          {/* Row 1: Couple photo spanning 2 cols + 2 venue photos */}
+          {/* Row 1: Large photo + 2 regular */}
           <motion.div
             variants={scaleIn}
             className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/image-1.jpeg"
+              src="/couple/couple-15.jpeg"
               alt="Eduard & Mar"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/castell-tallat-capilla.jpg"
-              alt="Castell Tallat - Capilla"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
 
@@ -233,23 +221,8 @@ export default function Home({
             className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/castell-tallat-exterior.jpg"
-              alt="Castell Tallat - Exterior"
-              fill
-              sizes="(min-width: 768px) 25vw, 50vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Row 2: Three venue photos + 1 couple photo */}
-          <motion.div
-            variants={scaleIn}
-            className="relative h-64 rounded-3xl overflow-hidden group"
-          >
-            <Image
-              src="/castell-tallat-naturaleza.jpg"
-              alt="Castell Tallat - Naturaleza"
+              src="/couple/couple-7.jpeg"
+              alt="Eduard & Mar"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -259,10 +232,25 @@ export default function Home({
 
           <motion.div
             variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-22.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 2: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
             className="relative h-64 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/image-2.jpeg"
+              src="/couple/couple-3.jpeg"
               alt="Eduard & Mar"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
@@ -276,8 +264,8 @@ export default function Home({
             className="relative h-64 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/castell-tallat-elegantes.jpg"
-              alt="Castell Tallat - Elegantes"
+              src="/couple/couple-18.jpeg"
+              alt="Eduard & Mar"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -290,8 +278,8 @@ export default function Home({
             className="relative h-64 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/castell-tallat-unico.jpg"
-              alt="Castell Tallat - Único"
+              src="/couple/couple-11.jpeg"
+              alt="Eduard & Mar"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -299,20 +287,622 @@ export default function Home({
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
 
-          {/* Row 3: Large spanning couple photo */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-9.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 3: 2 regular + Large photo */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-5.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-20.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 relative h-64 md:h-96 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-1.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 4: Full width photo */}
           <motion.div
             variants={scaleIn}
             className="col-span-2 md:col-span-4 relative h-72 md:h-96 rounded-3xl overflow-hidden group"
           >
             <Image
-              src="/image-3.jpeg"
+              src="/couple/couple-14.jpeg"
               alt="Eduard & Mar"
               fill
               sizes="100vw"
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </motion.div>
+
+          {/* Row 5: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-8.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-16.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-2.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-19.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 6: Large photo + 2 regular */}
+          <motion.div
+            variants={scaleIn}
+            className="col-span-2 relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-6.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-13.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 md:h-80 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-21.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Row 7: 4 regular photos */}
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-10.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-4.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-17.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            variants={scaleIn}
+            className="relative h-64 rounded-3xl overflow-hidden group"
+          >
+            <Image
+              src="/couple/couple-12.jpeg"
+              alt="Eduard & Mar"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Our Story Timeline */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeIn}
+        className="py-20 px-4"
+      >
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
+              {t.home.timeline?.title ?? "Our Story"}
+            </h2>
+            <p className="text-lg text-gray-600">
+              {t.home.timeline?.subtitle ?? "From the beginning to forever"}
+            </p>
+          </motion.div>
+
+          {/* Timeline Container */}
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D4A89F] via-[#D4A89F] to-[#D4A89F] transform -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D4A89F] via-[#D4A89F] to-[#D4A89F] md:hidden" />
+
+            {/* Timeline Items */}
+            <div className="space-y-12">
+              {/* 2018 - First Meet */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Content */}
+                <div className="md:text-right md:pr-12 ml-16 md:ml-0">
+                  <div className="inline-block md:float-right">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                      2018
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t.home.timeline?.y2018?.title ?? "First Meet"}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t.home.timeline?.y2018?.description ??
+                        "Where it all began..."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
+                  <Image
+                    src="/couple/couple-1.jpeg"
+                    alt="2018"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              {/* 2019 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-3.jpeg"
+                    alt="2019"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Content */}
+                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    2019
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {t.home.timeline?.y2019?.title ?? "Growing Together"}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.home.timeline?.y2019?.description ??
+                      "Building our story..."}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* 2020 - Milestone */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Content */}
+                <div className="md:text-right md:pr-12 ml-16 md:ml-0">
+                  <div className="inline-block md:float-right">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                      2020
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t.home.timeline?.y2020?.title ?? "Special Moment"}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t.home.timeline?.y2020?.description ??
+                        "A memorable year together..."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
+                  <Image
+                    src="/couple/couple-5.jpeg"
+                    alt="2020"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              {/* 2021 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-7.jpeg"
+                    alt="2021"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Content */}
+                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    2021
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {t.home.timeline?.y2021?.title ?? "Memorable Moments"}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.home.timeline?.y2021?.description ??
+                      "Creating memories together..."}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* 2022 - Adventure */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Content */}
+                <div className="md:text-right md:pr-12 ml-16 md:ml-0">
+                  <div className="inline-block md:float-right">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                      2022
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t.home.timeline?.y2022?.title ?? "New Adventure"}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t.home.timeline?.y2022?.description ??
+                        "Exploring new horizons together..."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
+                  <Image
+                    src="/couple/couple-10.jpeg"
+                    alt="2022"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              {/* 2023 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-12.jpeg"
+                    alt="2023"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Content */}
+                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    2023
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {t.home.timeline?.y2023?.title ?? "Together Forever"}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.home.timeline?.y2023?.description ??
+                      "Strengthening our bond..."}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* 2024 - Engagement */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Content */}
+                <div className="md:text-right md:pr-12 ml-16 md:ml-0">
+                  <div className="inline-block md:float-right">
+                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                      2024
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t.home.timeline?.y2024?.title ?? "The Proposal"}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t.home.timeline?.y2024?.description ??
+                        "The beginning of forever..."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group ml-16 md:ml-0">
+                  <Image
+                    src="/couple/couple-14.jpeg"
+                    alt="2024"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              {/* 2025 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Image */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-18.jpeg"
+                    alt="2025"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Right side - Content */}
+                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                  <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
+                    2025
+                  </span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {t.home.timeline?.y2025?.title ?? "Planning Our Future"}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.home.timeline?.y2025?.description ??
+                      "Preparing for the big day..."}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* 2026 - Wedding */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Left side - Content */}
+                <div className="md:text-right md:pr-12 ml-16 md:ml-0">
+                  <div className="inline-block md:float-right">
+                    <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-[#D4A89F] to-[#C59890] text-white text-sm font-semibold mb-3 animate-pulse">
+                      2026
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t.home.timeline?.y2026?.title ?? "Our Wedding Day"}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t.home.timeline?.y2026?.description ??
+                        "Celebrating our love with family and friends..."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center dot - Special for wedding */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-6 h-6 bg-gradient-to-br from-[#D4A89F] to-[#C59890] rounded-full border-4 border-white shadow-xl transform md:-translate-x-1/2 -translate-x-3 animate-pulse">
+                  <div className="absolute inset-0 rounded-full bg-[#D4A89F] animate-ping opacity-75" />
+                </div>
+
+                {/* Right side - Image */}
+                <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl group ml-16 md:ml-0">
+                  <Image
+                    src="/couple/couple-15.jpeg"
+                    alt="2026 - Wedding"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-semibold text-lg drop-shadow-lg">
+                      June 12, 2026
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </motion.section>
 
