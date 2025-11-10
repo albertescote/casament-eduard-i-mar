@@ -92,7 +92,7 @@ export default function Home({
         {/* Hero Content */}
         <motion.div
           variants={staggerContainer}
-          className="absolute inset-0 z-10 flex items-center justify-center text-center px-6"
+          className="absolute inset-0 z-10 flex items-center justify-center text-center px-6 py-12 sm:py-0"
         >
           <div className="max-w-5xl mx-auto">
             <motion.div variants={fadeInUp} className="mb-6">
@@ -598,22 +598,8 @@ export default function Home({
                 transition={{ duration: 0.6 }}
                 className="relative grid md:grid-cols-2 gap-8 items-center"
               >
-                {/* Left side - Image */}
-                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
-                  <Image
-                    src="/couple/couple-3.jpeg"
-                    alt="2019"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 80vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-
-                {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
-
-                {/* Right side - Content */}
-                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                {/* Content - First on mobile */}
+                <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
                   <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
                     2019
                   </span>
@@ -624,6 +610,20 @@ export default function Home({
                     {t.home.timeline?.y2019?.description ??
                       "Building our story..."}
                   </p>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Image - Second on mobile */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-3.jpeg"
+                    alt="2019"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               </motion.div>
 
@@ -674,22 +674,8 @@ export default function Home({
                 transition={{ duration: 0.6 }}
                 className="relative grid md:grid-cols-2 gap-8 items-center"
               >
-                {/* Left side - Image */}
-                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
-                  <Image
-                    src="/couple/couple-7.jpeg"
-                    alt="2021"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 80vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-
-                {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
-
-                {/* Right side - Content */}
-                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                {/* Content - First on mobile */}
+                <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
                   <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
                     2021
                   </span>
@@ -700,6 +686,20 @@ export default function Home({
                     {t.home.timeline?.y2021?.description ??
                       "Creating memories together..."}
                   </p>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Image - Second on mobile */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-7.jpeg"
+                    alt="2021"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               </motion.div>
 
@@ -750,22 +750,8 @@ export default function Home({
                 transition={{ duration: 0.6 }}
                 className="relative grid md:grid-cols-2 gap-8 items-center"
               >
-                {/* Left side - Image */}
-                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
-                  <Image
-                    src="/couple/couple-12.jpeg"
-                    alt="2023"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 80vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-
-                {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
-
-                {/* Right side - Content */}
-                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                {/* Content - First on mobile */}
+                <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
                   <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
                     2023
                   </span>
@@ -776,6 +762,20 @@ export default function Home({
                     {t.home.timeline?.y2023?.description ??
                       "Strengthening our bond..."}
                   </p>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Image - Second on mobile */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-12.jpeg"
+                    alt="2023"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               </motion.div>
 
@@ -826,22 +826,8 @@ export default function Home({
                 transition={{ duration: 0.6 }}
                 className="relative grid md:grid-cols-2 gap-8 items-center"
               >
-                {/* Left side - Image */}
-                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group md:order-1 ml-16 md:ml-0 md:mr-12">
-                  <Image
-                    src="/couple/couple-18.jpeg"
-                    alt="2025"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 80vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-
-                {/* Center dot */}
-                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
-
-                {/* Right side - Content */}
-                <div className="md:order-2 md:pl-12 ml-16 md:ml-0">
+                {/* Content - First on mobile */}
+                <div className="order-1 md:order-2 md:pl-12 ml-16 md:ml-0">
                   <span className="inline-block px-4 py-1 rounded-full bg-[#D4A89F] text-white text-sm font-semibold mb-3">
                     2025
                   </span>
@@ -852,6 +838,20 @@ export default function Home({
                     {t.home.timeline?.y2025?.description ??
                       "Preparing for the big day..."}
                   </p>
+                </div>
+
+                {/* Center dot */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 bg-[#D4A89F] rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 -translate-x-2" />
+
+                {/* Image - Second on mobile */}
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl group order-2 md:order-1 ml-16 md:ml-0 md:mr-12">
+                  <Image
+                    src="/couple/couple-18.jpeg"
+                    alt="2025"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 80vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               </motion.div>
 
@@ -924,7 +924,7 @@ export default function Home({
           >
             <div className="absolute inset-0">
               <Image
-                src="/venue-2.jpg"
+                src="/castelltallat/venue-2.jpg"
                 alt="Save the date"
                 fill
                 sizes="100vw"

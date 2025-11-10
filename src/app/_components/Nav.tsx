@@ -107,7 +107,7 @@ export function Nav() {
       <div className="flex h-16 items-center justify-between">
         {/* Logo/Brand */}
         <Link href={`/${locale}`} className="group flex items-center gap-2">
-          <div className="flex items-center justify-center w-9 h-9 rounded-full bg-[#D4A89F] shadow-md group-hover:shadow-lg transition-shadow duration-300">
+          <div className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-[#D4A89F] shadow-md group-hover:shadow-lg transition-shadow duration-300">
             <svg
               className="w-5 h-5 text-white"
               fill="currentColor"
