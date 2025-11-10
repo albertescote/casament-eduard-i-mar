@@ -92,12 +92,12 @@ export default function Home({
         {/* Hero Content */}
         <motion.div
           variants={staggerContainer}
-          className="absolute inset-0 z-10 flex items-center justify-center text-center px-6 py-12 sm:py-0"
+          className="absolute inset-0 z-10 flex items-center justify-center text-center px-8 py-16 sm:px-6 sm:py-0"
         >
-          <div className="max-w-5xl mx-auto">
-            <motion.div variants={fadeInUp} className="mb-6">
-              <div className="inline-block px-6 py-2 rounded-full bg-[#E8D5D0]/95 backdrop-blur-sm mb-6">
-                <p className="text-sm font-medium text-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <motion.div variants={fadeInUp} className="mb-4">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-[#F9F4F2]/95 backdrop-blur-sm mb-4">
+                <p className="text-xs sm:text-sm font-medium text-gray-900">
                   {t.home.datePlace}
                 </p>
               </div>
@@ -105,29 +105,29 @@ export default function Home({
 
             <motion.h1
               variants={fadeInUp}
-              className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 tracking-tight drop-shadow-2xl"
             >
               {t.home.heroTitle}
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl sm:text-2xl text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-lg"
+              className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-10 max-w-xl sm:max-w-2xl mx-auto drop-shadow-lg px-4 sm:px-0"
             >
               {t.home.heroLead}
             </motion.p>
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
             >
               <Link
                 href={`/${locale}/wedding`}
-                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-8 py-4 text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                className="group inline-flex items-center justify-center rounded-full bg-[#D4A89F] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold hover:bg-[#C59890] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
               >
                 {t.home.ctaSchedule}
                 <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -142,11 +142,11 @@ export default function Home({
               </Link>
               <Link
                 href={`/${locale}/rsvp`}
-                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
+                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#E8DED3]"
               >
                 {t.home.ctaRsvp}
                 <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
