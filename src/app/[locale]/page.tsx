@@ -76,17 +76,20 @@ export default function Home({
         className="relative w-full overflow-hidden rounded-3xl"
       >
         {/* Background Image with Overlay */}
-        <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9]">
-          <Image
-            src="/designs/invitation-colorful.jpg"
-            alt="Wedding"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10" />
-          <div className="absolute inset-0 bg-black/30" />
+        <div className="relative w-full max-w-5xl mx-auto">
+          <div className="relative w-full rounded-3xl overflow-hidden">
+            <Image
+              src="/designs/invitation-cut.jpeg"
+              alt="Wedding"
+              width={1920}
+              height={1080}
+              sizes="(min-width: 1024px) 80vw, 100vw"
+              className="w-full h-auto rounded-3xl"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10" />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
         </div>
 
         {/* Hero Content */}

@@ -67,9 +67,9 @@ export default function WeddingPage({
           transition={{ duration: 0.8 }}
           className="w-full px-4 sm:px-6"
         >
-          <div className="relative w-full mx-auto max-w-3xl overflow-hidden rounded-3xl shadow-2xl">
+          <div className="relative w-full mx-auto max-w-3xl overflow-hidden">
             <Image
-              src="/designs/schedule.png"
+              src="/designs/schedule-no-bg.png"
               alt={t.wedding.scheduleTitle}
               width={1000}
               height={1414}
