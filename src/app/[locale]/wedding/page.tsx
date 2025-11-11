@@ -280,16 +280,16 @@ export default function WeddingPage({
                   </p>
 
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center justify-between p-4 bg-[#F5F4EE] rounded-2xl border-2 border-[#D1CDB6] shadow-sm">
-                      <span className="font-semibold text-[#898651]">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-br from-[#898651]/10 to-[#898651]/5 rounded-2xl border-2 border-[#898651]/30 shadow-sm">
+                      <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusDeparture}:
                       </span>
                       <span className="text-[#898651] font-bold text-lg">
                         16:30
                       </span>
                     </div>
-                    <div className="flex items-center justify-between p-4 bg-[#F5F4EE] rounded-2xl border-2 border-[#D1CDB6] shadow-sm">
-                      <span className="font-semibold text-[#898651]">
+                    <div className="flex items-center justify-between p-4 bg-gradient-to-br from-[#898651]/10 to-[#898651]/5 rounded-2xl border-2 border-[#898651]/30 shadow-sm">
+                      <span className="font-semibold text-gray-700">
                         {t.wedding.transportBusReturn}:
                       </span>
                       <span className="text-[#898651] font-bold text-lg">
@@ -379,10 +379,10 @@ export default function WeddingPage({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-[#F5F4EE] rounded-2xl border-2 border-[#B2AE8B] shadow-sm"
+                        className="flex items-start gap-3 p-4 bg-gradient-to-br from-[#898651]/10 to-[#898651]/5 rounded-2xl border-2 border-[#898651]/30 shadow-sm"
                       >
                         <svg
-                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#6C914C]"
+                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#898651]"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -392,7 +392,7 @@ export default function WeddingPage({
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span className="text-sm text-bold text-[#898651] leading-relaxed">
+                        <span className="text-sm font-semibold text-gray-700 leading-relaxed">
                           {feature}
                         </span>
                       </motion.li>
