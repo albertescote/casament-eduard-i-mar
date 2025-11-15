@@ -9,7 +9,7 @@ export const ca = {
   home: {
     heroTitle: "Mar & Eduard",
     heroLead:
-      "Ens casem! Explora els detalls del dia, consulta l'horari i confirma si podràs venir.",
+      "Ens casem i ens fa molta il·lusió compartir aquest dia amb vosaltres. Aquí trobareu tots els detalls de la celebració, l’horari i l’enllaç per confirmar la vostra assistència.",
     ctaSchedule: "Veure horari",
     ctaRsvp: "Confirmar assistència",
     datePlace: "12 de juny de 2026 · Castell Tallat",
@@ -75,7 +75,7 @@ export const ca = {
     transportTitle: "Com Arribar",
     transportBusTitle: "Autobús Llançadora",
     transportBusDescription:
-      "Oferim un servei d'autobús d'anada i tornada entre el centre de la ciutat i el lloc de la celebració. Les places són limitades, si us plau, indica a la confirmació d'assistència si faràs ús de l'autobús.",
+      "Perquè pugueu venir amb tota tranquil·litat, hem organitzat un autobús d’anada i tornada entre Valls i el lloc de la celebració. Les places són limitades, així que us agrairem que ens digueu a la confirmació d’assistència si el voleu utilitzar.",
     transportBusDeparture: "Sortida",
     transportBusReturn: "Tornada",
     transportBusLocation: "Estació d'autobusos de Valls",
@@ -83,7 +83,7 @@ export const ca = {
       "Confirma la teva plaça al formulari de confirmació d'assistència.",
     transportParkingTitle: "Aparcament Privat",
     transportParkingDescription:
-      "Hi ha aparcament gratuït disponible al recinte. Si us plau, arriba 15 minuts abans per tenir temps d'aparcar i caminar fins a la zona de cerimònia.",
+      "Hi haurà aparcament gratuït al recinte. Us recomanem arribar uns 15 minuts abans, així tindreu temps per aparcar i caminar tranquil·lament fins a la zona de la cerimònia.",
     parkingFeature1: "Zona d'aparcament al costat de l'entrada principal.",
     parkingFeature2: "Es permet aparcar durant tota la nit.",
     parkingFeature3: "Seguiu les indicacions del personal en arribar.",
@@ -125,8 +125,9 @@ export const ca = {
   faqs: {
     title: "Preguntes Freqüents",
     iban: {
-      title: "Detalls Bancaris",
-      description: "Si voleu fer una contribució, podeu usar aquest IBAN:",
+      title: "Ens voleu fer un regal?",
+      description:
+        "Si voleu fer-nos arribar alguna aportació, us compartim el nostre compte bancari. Qualsevol detall és benvingut i l’agraïm molt.",
       thanks: "Gràcies per pensar en nosaltres",
       copy: "Copiar",
       copied: "Copiat",
@@ -139,6 +140,9 @@ export const ca = {
     },
     hotels: {
       title: "Hotels Recomanats",
+      description:
+        "Per als que veniu de fora, si necessiteu allotjament us recomanem consultar la disponibilitat d'aquests hotels de Valls.",
+      viewAvailability: "Veure disponibilitat",
       hotel1: {
         name: "Hotel Masia Vallès",
         notes: "A 3 km de la masia · €€€",

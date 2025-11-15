@@ -176,27 +176,24 @@ export default function Faqs({
         </svg>
       ),
       content: (
-        <div className="grid sm:grid-cols-2 gap-4">
-          <Hotel
-            name={t.faqs.hotels.hotel1.name}
-            href="https://example.com"
-            notes={t.faqs.hotels.hotel1.notes}
-          />
-          <Hotel
-            name={t.faqs.hotels.hotel2.name}
-            href="https://example.com"
-            notes={t.faqs.hotels.hotel2.notes}
-          />
-          <Hotel
-            name={t.faqs.hotels.hotel3.name}
-            href="https://example.com"
-            notes={t.faqs.hotels.hotel3.notes}
-          />
-          <Hotel
-            name={t.faqs.hotels.hotel4.name}
-            href="https://example.com"
-            notes={t.faqs.hotels.hotel4.notes}
-          />
+        <div className="space-y-6">
+          <p className="text-gray-700 leading-relaxed">
+            {t.faqs.hotels.description}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Hotel
+              name="Hotel Fèlix"
+              href="https://felixhotel.net/"
+              imageSrc="/felix-hotel.jpg"
+              viewAvailabilityText={t.faqs.hotels.viewAvailability}
+            />
+            <Hotel
+              name="B&B HOTEL Tarragona Valls"
+              href="https://www.hotel-bb.com/es/hotel/tarragona-valls"
+              imageSrc="/bb-hotel.jpg"
+              viewAvailabilityText={t.faqs.hotels.viewAvailability}
+            />
+          </div>
         </div>
       ),
     },

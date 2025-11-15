@@ -69,101 +69,112 @@ export default function Home({
 
   return (
     <div className="space-y-0">
-      {/* Hero Section - Full Screen */}
+      {/* Hero Section - Card Style with Side-by-Side Layout */}
       <motion.section
         initial="hidden"
         animate="visible"
-        className="relative w-full overflow-hidden rounded-3xl"
+        className="py-12 sm:py-6 px-4"
       >
-        {/* Background Image with Overlay */}
-        <div className="relative w-full max-w-5xl mx-auto">
-          <div className="relative w-full rounded-3xl overflow-hidden">
-            <Image
-              src="/designs/invitation-cut.jpeg"
-              alt="Wedding"
-              width={1920}
-              height={1080}
-              sizes="(min-width: 1024px) 80vw, 100vw"
-              className="w-full h-auto rounded-3xl"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10" />
-          </div>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left side - Hero Content */}
+            <motion.div
+              variants={staggerContainer}
+              className="order-2 lg:order-1 text-center lg:text-left"
+            >
+              <motion.div variants={fadeInUp} className="mb-6">
+                <div className="inline-block px-5 py-2 rounded-full bg-[#898651]/10 border border-[#898651]/20 mb-4">
+                  <p className="text-sm sm:text-base font-medium text-[#898651]">
+                    {t.home.datePlace}
+                  </p>
+                </div>
+              </motion.div>
 
-        {/* Hero Content */}
-        <motion.div
-          variants={staggerContainer}
-          className="absolute inset-0 z-10 flex items-center justify-center text-center px-8 py-16 sm:px-6 sm:py-0"
-        >
-          <div className="max-w-4xl mx-auto">
-            <motion.div variants={fadeInUp} className="mb-4">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-[#F9F4F2]/95 backdrop-blur-sm mb-4">
-                <p className="text-xs sm:text-sm font-medium text-gray-900">
-                  {t.home.datePlace}
-                </p>
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight"
+              >
+                {t.home.heroTitle}
+              </motion.h1>
+
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-xl lg:max-w-none mx-auto lg:mx-0"
+              >
+                {t.home.heroLead}
+              </motion.p>
+
+              <motion.div
+                variants={fadeInUp}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Link
+                  href={`/${locale}/wedding`}
+                  className="group inline-flex items-center justify-center rounded-full bg-[#898651] text-white px-8 py-4 text-base font-semibold hover:bg-[#B2AE8B] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  {t.home.ctaSchedule}
+                  <svg
+                    className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href={`/${locale}/rsvp`}
+                  className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-[#D1CDB6]"
+                >
+                  {t.home.ctaRsvp}
+                  <svg
+                    className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right side - Invitation Card */}
+            <motion.div
+              variants={scaleIn}
+              className="order-1 lg:order-2 flex justify-center lg:justify-start"
+            >
+              <div className="relative group">
+                {/* Decorative shadow/backdrop cards */}
+                <div className="absolute inset-0 bg-white rounded-xl transform rotate-2 scale-105 opacity-30 group-hover:rotate-3 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-white rounded-xl transform -rotate-1 scale-105 opacity-40 group-hover:-rotate-2 transition-transform duration-300" />
+
+                {/* Main invitation card */}
+                <div className="relative bg-white rounded-xl shadow-2xl p-5 sm:p-7 transform group-hover:-translate-y-2 transition-all duration-300 max-w-sm sm:max-w-md md:max-w-lg">
+                  <Image
+                    src="/designs/invitation.png"
+                    alt="Wedding Invitation"
+                    width={500}
+                    height={750}
+                    sizes="(min-width: 768px) 500px, 400px"
+                    className="w-full h-auto rounded-lg"
+                    priority
+                  />
+                </div>
               </div>
             </motion.div>
-
-            <motion.h1
-              variants={fadeInUp}
-              className="text-2xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2 sm:mb-6 tracking-tight drop-shadow-2xl"
-            >
-              {t.home.heroTitle}
-            </motion.h1>
-
-            <motion.p
-              variants={fadeInUp}
-              className="text-xs sm:text-xl md:text-2xl text-white/90 mb-3 sm:mb-10 max-w-xl sm:max-w-2xl mx-auto drop-shadow-lg px-4 sm:px-0"
-            >
-              {t.home.heroLead}
-            </motion.p>
-
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-1.5 sm:gap-4 justify-center items-center"
-            >
-              <Link
-                href={`/${locale}/wedding`}
-                className="group inline-flex items-center justify-center rounded-full bg-[#898651] text-white px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-[#B2AE8B] transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
-              >
-                {t.home.ctaSchedule}
-                <svg
-                  className="ml-1.5 w-3 h-3 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-              <Link
-                href={`/${locale}/rsvp`}
-                className="group inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-4 py-2 sm:px-8 sm:py-4 text-xs sm:text-base font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-[#D1CDB6]"
-              >
-                {t.home.ctaRsvp}
-                <svg
-                  className="ml-1.5 w-3 h-3 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </motion.section>
 
       {/* Countdown Section */}
@@ -172,7 +183,7 @@ export default function Home({
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeIn}
-        className="py-20 px-4"
+        className="py-12 px-4"
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -200,25 +211,9 @@ export default function Home({
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeIn}
-        className="py-20 px-4"
+        className="py-12 px-4"
       >
         <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
-              {t.home.timeline?.title ?? "Our Story"}
-            </h2>
-            <p className="text-lg text-gray-600">
-              {t.home.timeline?.subtitle ?? "From the beginning to forever"}
-            </p>
-          </motion.div>
-
           {/* Timeline Container */}
           <div className="relative">
             {/* Vertical Line */}
@@ -583,7 +578,7 @@ export default function Home({
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-20 px-4"
+        className="py-12 px-4"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {/* Row 1: Large photo + 2 regular */}
@@ -909,7 +904,7 @@ export default function Home({
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeIn}
-        className="py-20 px-4"
+        className="py-12 px-4"
       >
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -929,7 +924,7 @@ export default function Home({
               />
               <div className="absolute inset-0 bg-gray-900/80" />
             </div>
-            <div className="relative z-10 py-20 px-8">
+            <div className="relative z-10 py-12 px-8">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                 {t.home.ctaTitle}
               </h2>

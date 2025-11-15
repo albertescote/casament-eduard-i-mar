@@ -34,9 +34,6 @@ export function AccordionItem({
 
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-stone-400 font-semibold">
-              {String(index).padStart(2, "0")}
-            </span>
             <span className="text-lg font-semibold text-stone-800">
               {title}
             </span>
